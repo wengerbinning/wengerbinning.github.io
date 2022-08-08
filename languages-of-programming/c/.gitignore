@@ -1,0 +1,12 @@
+# Some compile files.
+**.o
+**.a
+**.so
+
+# Some folder.
+**/bin/
+**/.idea/
+**/.vscode/
+
+
+

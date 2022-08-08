@@ -1,0 +1,57 @@
+{
+    "tasks": [
+        {
+            "label": "check framework",
+            "type": "shell",
+            "command": "mkdir",
+            "args": [
+                "bin",
+                "-p"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "problemMatcher":[],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "runOptions": {"runOn": "folderOpen"}
+        },
+        // g++
+        {
+            "label": "g++ build",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {"args": [], "executable": ""},
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+    ],
+
+    "version": "2.0.0",
+}

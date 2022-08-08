@@ -1,0 +1,5 @@
+span.underline {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #00ffff; 
+}
