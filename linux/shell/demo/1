@@ -1,0 +1,18 @@
+#!/bin/bash
+
+index=1
+
+for param in "$@"; do
+    case "$param" in 
+        --*)
+	   echo $index: \"$param\"
+	;;
+        -*)
+		echo $index: \"$param\"="${$($index)}" 
+        ;;
+        *)
+            echo $index: \"$param\"
+        ;;
+    esac
+    index=$(($index+1))
+done

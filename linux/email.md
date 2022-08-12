@@ -1,0 +1,2 @@
+可以发送电子邮件的程序有mail、mozilla、pine、emacs、kmail、evolution、exmh、sylpheed以及promail
+与gpg程序

@@ -1,0 +1,5 @@
+Procd
+
+procd是openwrt下新的预初始化、初始化、热拔插以及事件系统，在openwrt中procd作为init进程可以处理许多事情
+procd不必实现事件的处理策略，该系统只实现了一种机制，具体策略由配置文件决定的，被称作rules。
+

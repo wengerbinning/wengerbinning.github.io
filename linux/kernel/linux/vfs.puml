@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class super_block {
+   s_list
+   s_dev
+   s_blocksize
+   s_blocksize_bits
+   s_dirt
+   s_maxbytes
+   s_type
+
+   {method} s_op
+   {method} dq_op
+   {method} s_qcop
+}
+
+interface super_operations {
+    +struct inode * alloc_inode();
+    void destroy_inode(struct inode *);
+    void dirty_inode(struct inode *);
+    int write_inode(struct inode *, int);
+}
+
+class inode {
+    i_hash
+    i_list
+    i_sb_list
+    i_dentry
+    i_ino
+    {method} i_op
+    {method} i_fop
+}
+
+interface inode_operations {
+    +int create(struct inode *, struct dentry *, int, struct nameidata *);
+}
+
+class dentry {
+    d_count
+    d_flags
+    d_lock
+    {method} d_op
+    
+}
+
+interface dentry_operations {
+    +int d_revalidate(struct dentry *, struct nameidata *);
+}
+
+class file {
+    f_u
+    f_path
+    f_lock
+    f_count
+    f_flags
+    f_mode
+    f_pos
+    f_owner
+    ..
+    f_op
+}
+
+interface file_operations {
+    *owner
+    +loff_t llseek(struct file *, loff_t, int)
+    +ssize_t read(struct file *, char __user *, size_t, loff_t *)
+}
+
+inode --|> dentry
+super_block --|> dentry
+super_block --|> inode
+dentry --|> super_block
+@enduml
