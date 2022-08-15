@@ -1,0 +1,1 @@
+ipset是iptables的扩展模块。通过ipset可以匹配地址集合的规则，iptables链只能单个IP匹配

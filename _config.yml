@@ -1,1 +1,92 @@
+<<<<<<< HEAD
+#
+# Websites Basic Setting
+#
+title: 
+  cn-name: 文彬的开发手册
+  en-name: Wenger handbook
+=======
+# Site configuration
+>>>>>>> f430270 (update daily)
+
+##################
+# Themes Options #
+##################
+
+<<<<<<< HEAD
+author:
+  cn-name: 郑文彬
+  en-name: Wenger Binning
+  email:
+    - Netease: wengerbinning@163.com
+    - Gmail: wengerbinning@gmail.com
+
+#
+source: ./
+destination: ./_site
+layouts: ./_layouts
+data_source: ./_data
+plugins_dir: ./_plugins
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#theme: jekyll-theme-minimal
+# gitbook themes
+# remote_theme: sighingnow/jekyll-gitbook
+remote_theme: cotes2020/jekyll-theme-chirpy
+
+syntax_highlighter_style: colorful
+
+plugins:
+  - jekyll-coffeescript
+  # convert relative links to Markdown files to their rendered equivalents.
+  - jekyll-relative-links
+  - jekyll-paginate
+  - jekyll-github-metadata
+  - jekyll-avatar
+  - jekyll-mentions
+  - jemoji
+  - jekyll-feed
+  - jekyll-readme-index
+
+permalink:        /:categories/:year-:month-:day-:title:output_ext
+=======
+#theme: jekyll-theme-cayman
+>>>>>>> 2896f16 (daily update)
+
+# 
+collections:
+  home:
+    output: true
+    permalink: /:collection/:path/
+<<<<<<< HEAD
 theme: jekyll-theme-cayman
+>>>>>>> afcce08 (Set theme jekyll-theme-cayman)
+=======
+
+#
+# YMAL header information
+#
+default:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "about"
+    values:
+      layout: "about"
+
+
+#
+# plugins
+#
+plugins:
+  # plugin will auto create index.html from README.md.
+  - jekyll-readme-index
+>>>>>>> 2896f16 (daily update)
+=======
+#; theme: minima
+remote_theme: sighingnow/jekyll-gitbook
+>>>>>>> f430270 (update daily)

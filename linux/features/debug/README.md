@@ -1,0 +1,79 @@
+
+
+
+
+```c
+CONFIG_PREEMPT = y 
+CONFIG_DEBUG_KERNEL = y 
+CONFIG_KLLSYMS = y 
+CONFIG_SPINLOCK_SLEEP = y
+```
+
+
+
+
+```c
+ifndef HAVE_ARCH_BUG 
+#define BUG() do { 
+   printk("BUG: failure at %s:%d/%s()! ", __FILE__, __LINE__, __FUNCTION__); 
+   panic("BUG!");   /* 引发更严重的错误，不但打印错误消息，而且整个系统业会挂起 */ 
+} while (0) 
+#endif 
+
+#ifndef HAVE_ARCH_BUG_ON 
+   #define BUG_ON(condition) do { if (unlikely(condition)) BUG(); } while(0) 
+#endif
+```
+
+
+```c
+dump_stack();
+```
+
+
+```c
+printk
+```
+
+
+
+/proc/sys/kernel/printk
+
+内核日志的输出等级：
+
+<console> <default message> <minmum console> <default console>
+
+* console：控制台日志等级，将日志等级高于控制台日志等级时输出到终端；
+* default message：缺省日志等级，没有指定日志等级时的默认等级；
+* minimum console：最低的控制台日志等级
+* default console：控制台日志等级的缺省值。
+
+/proc/sys/kernel/printk_delay
+
+/proc/sys/kernel/printk_ratelimit
+设置打印的时间间隔。
+
+/proc/sys/kernel/printk_ratelimit_burst
+设置在打印时间间隔内最大的打印数量
+
+
+/proc/kmsg
+
+
+
+
+
+debugfs
+
+
+
+
+/sys/kernel/debug
+
+
+```c
+pr_debug
+```
+
+
+<debugfs>/dynamic_debug/

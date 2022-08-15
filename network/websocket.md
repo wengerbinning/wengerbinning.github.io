@@ -1,0 +1,3 @@
+so# Websocket
+
+websocket是一个应用层的协议，依赖于HTTP协议进行一次握手，握手成功后，数据就直接从TCP通道传输与HTTP无关了，即wenspcket分为握手与传输两个阶段，传输阶段是

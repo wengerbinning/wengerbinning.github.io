@@ -117,3 +117,41 @@ flash存储芯片是一种存储数据的芯片，有nand与nor两大类，在li
 
 UBI模型是基于mtd设备，封装了ubi设备的一些特性，并为ubifs提供访问mtd设备服务；FTL模型也是基于mtd
 设备，为block layer提供访问mtd设备的服务。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+宏
+
+```c
+
+#define INT_MAX   ((int)(~0U >> 1)) /* int max value:  2,147,483,647 */
+#define INT_MIN    (-INT_MAX - 1)   /* int min value: -2,147,483,648 */
+#define UINT_MAX   (~0U)
+
+
+```
+
+
+
+### 函数接口
+
+```c
+/* "scale" a value into range [0, ep_ro) */
+static inline u32 reciprocal_scale (u32 val, u32 ep_ro);
+
+```

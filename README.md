@@ -1,11 +1,5 @@
-# Wenger Binning
-
-This is Wenger Binning's blog.Recording my life and study. if you like this blog, You can send message by [email](wengerbinning@163.com) ☛ <wengerbinning@163.com>.
-
-## New essay
-
-## Directory
-
+This is Wenger Binning's blog.Recording my life and study. if you like this blog, You can send message 
+by [email](wengerbinning@163.com) ☛ <wengerbinning@163.com>.👌
 
 
 ## CATALOGUE
@@ -27,3 +21,36 @@ This is Wenger Binning's blog.Recording my life and study. if you like this blog
 #### [python](./languages-of-scripts/python/README.md)
 
 #### [perl](./languages-of-scripts/perl/README.md)
+
+
+### 程序算法
+
+#### 排序算法
+
+#### 搜索算法
+
+#### [消息摘要算法](./algorithm/message-digest-algorithm/README.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

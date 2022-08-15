@@ -1,0 +1,1 @@
+Linux Kernel的特性说明。

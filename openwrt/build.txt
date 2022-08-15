@@ -1,0 +1,24 @@
+
+
+
+./scripts/feeds update -a
+
+./scripts/feeds install -a
+
+在openwrt中linux kernel相关的修改在 target/linux
+
+
+
+
+
+scripts/config
+
+
+
+
+
+
+
+
+
+
