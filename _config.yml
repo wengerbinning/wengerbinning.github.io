@@ -1,5 +1,7 @@
-title: Wenger Handbook
-author: Wenger Binning
+title: Wenger GitHub Page
+email: wengerbinning@163.com
+url: "https://wengerbinning.github.io"
+markdown: kramdown
 
 encoding: UTF-8
 
@@ -9,9 +11,13 @@ encoding: UTF-8
 
 # gitbook themes
 # remote_theme: sighingnow/jekyll-gitbook
-remote_theme: rundocs/jekyll-rtd-theme
+# remote_theme: rundocs/jekyll-rtd-theme
 
 plugins:
   - jekyll-coffeescript
   # convert relative links to Markdown files to their rendered equivalents.
   - jekyll-relative-links
+  - jekyll-paginate
+  - jekyll-github-metadata
+
+permalink: /:year/:title:output_ext
