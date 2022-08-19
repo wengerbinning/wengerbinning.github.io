@@ -1,9 +1,16 @@
 title: GitHub Page for Wenger Binning
-
-url: "https://wengerbinning.github.io"
+longtitle: GitHub Page for Wenger Binning
+description: >
+  Wenger Binning Github Page.
 
 author: Wenger Binning
 email: wengerbinning@163.com
+url: "https://wengerbinning.github.io"
+baseurl: '/'
+
+version: 0.1
+gitbook_version: 3.2.3
+
 github_username: Wenger Binning
 twitter_username: Wenger Binning
 
@@ -19,6 +26,8 @@ markdown: kramdown
 # remote_theme: sighingnow/jekyll-gitbook
 # remote_theme: rundocs/jekyll-rtd-theme
 
+syntax_highlighter_style: colorful
+
 plugins:
   - jekyll-coffeescript
   # convert relative links to Markdown files to their rendered equivalents.
@@ -28,5 +37,12 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
   - jemoji
+  - jekyll-feed
+  - jekyll-readme-index
 
-permalink: /:year/:title:output_ext
+permalink:        /:categories/:year-:month-:day-:title:output_ext
+
+collections:
+  pages:
+    output: true
+    permalink: /:collection/:path/
