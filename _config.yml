@@ -1,4 +1,4 @@
-title: GitHub Page for Wenger Binning
+title: Wenger Binning
 longtitle: GitHub Page for Wenger Binning
 description: >
   Wenger Binning Github Page.
@@ -9,10 +9,12 @@ url: "https://wengerbinning.github.io"
 baseurl: '/'
 
 version: 0.1
-gitbook_version: 3.2.3
 
-github_username: Wenger Binning
-twitter_username: Wenger Binning
+github:
+  username: Wenger Binning
+
+twitter:
+  username: Wenger Binning
 
 encoding: UTF-8
 markdown: kramdown
@@ -24,7 +26,7 @@ markdown: kramdown
 #theme: jekyll-theme-minimal
 # gitbook themes
 # remote_theme: sighingnow/jekyll-gitbook
-# remote_theme: rundocs/jekyll-rtd-theme
+remote_theme: cotes2020/jekyll-theme-chirpy
 
 syntax_highlighter_style: colorful
 
