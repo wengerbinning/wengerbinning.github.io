@@ -1,9 +1,14 @@
 title: Wenger GitHub Page
-email: wengerbinning@163.com
 url: "https://wengerbinning.github.io"
-markdown: kramdown
+
+
+author: Wenger Binning
+email: wengerbinning@163.com
+github_username: Wenger Binning
+twitter_username: Wenger Binning
 
 encoding: UTF-8
+markdown: kramdown
 
 # 
 # themes
