@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+{%- if page.title -%}
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+{%- else -%}
+    <title>{{ site.title | escape }}</title>
+{%- endif -%}
+
+{%- if site.author -%}
+    <meta name="author" content="{{ site.author | escape }}">
+{%- endif -%}
+
