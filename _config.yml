@@ -1,2 +1,7 @@
+site:
+  title: Wenger Handbook
+
+encoding: UTF-8
+
 plugins:
   - jekyll-coffeescript
