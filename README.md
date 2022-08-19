@@ -27,3 +27,15 @@ This is Wenger Binning's blog.Recording my life and study. if you like this blog
 #### [python](./languages-of-scripts/python/README.md)
 
 #### [perl](./languages-of-scripts/perl/README.md)
+
+
+### 程序算法
+
+#### 排序算法
+
+#### 搜索算法
+
+#### [消息摘要算法](./algorithm/message-digest-algorithm/README.md)
+
+
+
