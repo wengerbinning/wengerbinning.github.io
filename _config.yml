@@ -3,7 +3,14 @@ author: Wenger Binning
 
 encoding: UTF-8
 
+# 
+# themes
+#
+
+# gitbook themes
 remote_theme: sighingnow/jekyll-gitbook
 
 plugins:
   - jekyll-coffeescript
+  # convert relative links to Markdown files to their rendered equivalents.
+  - jekyll-relative-links
