@@ -8,7 +8,8 @@ encoding: UTF-8
 #
 
 # gitbook themes
-remote_theme: sighingnow/jekyll-gitbook
+# remote_theme: sighingnow/jekyll-gitbook
+remote_theme: rundocs/jekyll-rtd-theme
 
 plugins:
   - jekyll-coffeescript
