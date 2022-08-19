@@ -1,6 +1,9 @@
 title: Wenger Handbook
+author: Wenger Binning
 
 encoding: UTF-8
+
+remote_theme: sighingnow/jekyll-gitbook
 
 plugins:
   - jekyll-coffeescript
