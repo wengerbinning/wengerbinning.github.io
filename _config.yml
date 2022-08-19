@@ -1,1 +1,41 @@
+###############################################################################
+# 
+#
+#
+###############################################################################
+
+# 
+# Basic
+#
+title: Wenger's Handbook
+
+author: Wenger Binning
+
+
+
+
+
+#
+#
+#
+
 theme: jekyll-theme-cayman
+
+
+
+
+#
+# Plugins
+#
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+
+#
+# footer
+#
+
+
+url-pretty: "https://github.com/wengerbinning/"
