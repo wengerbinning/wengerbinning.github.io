@@ -2,8 +2,8 @@
 # Websites Basic Setting
 #
 title: 
-  cn-name: 文彬的开发手册
-  en-name: Wenger handbook
+  cn-name: 郑文彬的Github仓库
+  en-name: Wenger Binning GitHub Repository
 
 # 
 timezone: Asia/Shanghai
@@ -22,3 +22,9 @@ layouts: ./_layouts
 data_source: ./_data
 plugins_dir: ./_plugins
 
+theme: jekyll-theme-cayman
+
+collections:
+  pages:
+    output: true
+    permalink: /:collection/:path/
