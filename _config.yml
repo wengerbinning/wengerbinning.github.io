@@ -1,50 +1,24 @@
-title: Wenger Binning
-longtitle: GitHub Page for Wenger Binning
-description: >
-  Wenger Binning Github Page.
-
-author: Wenger Binning
-email: wengerbinning@163.com
-url: "https://wengerbinning.github.io"
-baseurl: '/'
-
-version: 0.1
-
-github:
-  username: Wenger Binning
-
-twitter:
-  username: Wenger Binning
-
-encoding: UTF-8
-markdown: kramdown
+#
+# Websites Basic Setting
+#
+title: 
+  cn-name: 文彬的开发手册
+  en-name: Wenger handbook
 
 # 
-# themes
+timezone: Asia/Shanghai
+
+author:
+  cn-name: 郑文彬
+  en-name: Wenger Binning
+  email:
+    - Netease: wengerbinning@163.com
+    - Gmail: wengerbinning@gmail.com
+
 #
+source: ./
+destination: ./_site
+layouts: ./_layouts
+data_source: ./_data
+plugins_dir: ./_plugins
 
-#theme: jekyll-theme-minimal
-# gitbook themes
-# remote_theme: sighingnow/jekyll-gitbook
-remote_theme: cotes2020/jekyll-theme-chirpy
-
-syntax_highlighter_style: colorful
-
-plugins:
-  - jekyll-coffeescript
-  # convert relative links to Markdown files to their rendered equivalents.
-  - jekyll-relative-links
-  - jekyll-paginate
-  - jekyll-github-metadata
-  - jekyll-avatar
-  - jekyll-mentions
-  - jemoji
-  - jekyll-feed
-  - jekyll-readme-index
-
-permalink:        /:categories/:year-:month-:day-:title:output_ext
-
-collections:
-  pages:
-    output: true
-    permalink: /:collection/:path/
