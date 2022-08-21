@@ -48,3 +48,4 @@ collections:
   pages:
     output: true
     permalink: /:collection/:path/
+theme: jekyll-theme-cayman
