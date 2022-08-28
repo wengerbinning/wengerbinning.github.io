@@ -22,9 +22,31 @@ layouts: ./_layouts
 data_source: ./_data
 plugins_dir: ./_plugins
 
-theme: jekyll-theme-cayman
+#theme: jekyll-theme-cayman
 
+# 
 collections:
-  pages:
+  home:
     output: true
     permalink: /:collection/:path/
+
+#
+# YMAL header information
+#
+default:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "about"
+    values:
+      layout: "about"
+
+
+#
+# plugins
+#
+plugins:
+  # plugin will auto create index.html from README.md.
+  - jekyll-readme-index
