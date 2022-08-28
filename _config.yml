@@ -2,8 +2,7 @@
 # Websites Basic Setting
 #
 title: 
-  cn-name: 郑文彬的Github仓库
-  en-name: Wenger Binning GitHub Repository
+  en: Wenger Binning GitHub Repository
 
 # 
 timezone: Asia/Shanghai
@@ -37,7 +36,7 @@ default:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "home"
   - scope:
       path: "about"
     values:
