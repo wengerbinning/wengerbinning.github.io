@@ -1,18 +1,18 @@
-Linux是由Linus Torvalds开发的内核与GNU项目的软件集组合成的一个开源操作系统，为向GNU组织致敬，
-在网络上也会出现GNU/Linux来指这个开源操作系统。
+Linux操作系统是由Linus Torvalds开发的内核与GNU项目的软件集组合成的一个开源操作系统，为向
+GNU组织致敬，在网络上也会出现GNU/Linux来指这个开源操作系统。
 
 Linux是由Linus Torvalds领导开发的系统内核，其目的是为计算机上其他程序分配计算机资源：CPU、
 内存、外部设备等。在内核之上有一部分软件完成了计算机的日常维护，这一类软件称为系统软件，有内核与
-系统软件共同组成操作系统。在系统软件中，大部分都是以客户端与服务器模型中的服务器的形式存在，这一类
-服务有称为守护进程。
+系统软件共同组成操作系统。在系统软件中，大部分都是以客户端与服务器模型中的服务器的形式存在，这一
+类服务有称为守护进程。
 
-1983年，Richard Stallman宣布要开发GNU项目，在项目中将实现内核以及系统程序的在内的完成的
-操作系统，该系统将与UNIX完全兼容，目的是为每一个人可以自由的使用与修改GNU项目中的自由软件。
-在1991年，GNU项目除内核其他大部分的都已完成。
+1983年，Richard Stallman宣布要开发GNU项目，在项目中将实现内核以及系统程序的在内的完成的操作
+系统，该系统将与UNIX完全兼容，目的是为每一个人可以自由的使用与修改GNU项目中的自由软件。在1991
+年，GNU项目除内核其他大部分的都已完成。
 
-UNIX是需要现代化计算机工具辅助来完成项目的科研工作者开发的。该系统允许一组人协同工作。一些
-大学与学院在UNIX发展中扮演着重要的角色。UNIX刚开始是以象征性的价格向大学开放，，后来UNIX被商业
-化，不再适用于教学。
+UNIX是需要现代化计算机工具辅助来完成项目的科研工作者开发的。该系统允许一组人协同工作。一些大学
+与学院在UNIX发展中扮演着重要的角色。UNIX刚开始是以象征性的价格向大学开放，，后来UNIX被商业化，
+不再适用于教学。
 
 MINIX是Andrew Tanenbaum教授开发的用于教学的系统；Linus在MINIX的基础上开发了Linux。Linux
 可以通过网络免费获取以及支付一定费用可以获取的GNU项目中的自由软件。这样促进了Linux与自由软件的结合。
@@ -120,9 +120,20 @@ pacman, yay, paru
 
 
 
-LINKS
-=====
 
+## MENU
+
+inlcude是linux内核的头文件
+
+* [uapi](./uapi.md)是头文件模块中用于区分内核态与用户态头文件的机制。
+
+
+
+
+
+
+
+## LINKS
 
 > [官方网站](https://www.linux.org/) ☛ <https://www.linux.org/>
 
@@ -136,6 +147,13 @@ LINKS
   1. [官方介绍](https://www.centos.org/about/) > https://www.centos.org/about/
   2. [官方文档](https://) > https://
   3. [官方社区]() >
+
+
+
+* Linux kernel Repository
+
+ [Code Aurora](https://kernel.source.codeaurora.cn/)
+ <https://kernel.source.codeaurora.cn/>
 
 
 
