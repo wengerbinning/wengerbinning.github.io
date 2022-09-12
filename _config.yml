@@ -20,7 +20,7 @@ layouts: ./_layouts
 data_source: ./_data
 plugins_dir: ./_plugins
 
-#theme: jekyll-theme-cayman
+theme: minima
 
 # 
 collections:
