@@ -1,29 +1,16 @@
 #
-# Websites Basic Setting
+# Website Basic Setting
 #
 
-title: Wenger Binning GitHub Page
 
-# 
-timezone: Asia/Shanghai
-
-author:
-  cn-name: 郑文彬
-  en-name: Wenger Binning
-  email:
-    - Netease: wengerbinning@163.com
-    - Gmail: wengerbinning@gmail.com
-
+#
+# Website Theme 
+#
 
 theme: minima
 
 #
-# YMAL header information
-#
-
-
-#
-# plugins
+# Website Plugins
 #
 
 plugins:
