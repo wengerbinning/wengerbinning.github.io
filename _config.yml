@@ -1,6 +1,7 @@
 #
 # Websites Basic Setting
 #
+
 title: Wenger Binning GitHub Page
 
 # 
@@ -13,38 +14,19 @@ author:
     - Netease: wengerbinning@163.com
     - Gmail: wengerbinning@gmail.com
 
-#
-source: ./
-destination: ./_site
-layouts: ./_layouts
-data_source: ./_data
-plugins_dir: ./_plugins
 
 theme: minima
-
-# 
-collections:
-  home:
-    output: true
-    permalink: /:collection/:path/
 
 #
 # YMAL header information
 #
-default:
-  - scope:
-      path: ""
-    values:
-      layout: "home"
-  - scope:
-      path: "about"
-    values:
-      layout: "about"
 
 
 #
 # plugins
 #
+
 plugins:
+  - jekyll-seo-tag
   # plugin will auto create index.html from README.md.
   - jekyll-readme-index
