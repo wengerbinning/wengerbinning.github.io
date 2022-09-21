@@ -1,5 +1,4 @@
-脚本语言是
-
+解释语言(Interpreted Languages)
 
 
 

@@ -1,14 +1,15 @@
 # Linux Manual Page 
 
 
-1
-2
-3
-4
-5
-6
-7
-8
+| section | label | comment |
+|:--- |:--- |:--- |
+| 1 | user command | |
+| 2 | system calls | |
+| 3 | library functions | |
+| 4 | devices | |
+| 5 | files | |
+| 7 | overviews, conventions, and miscellaneous | |
+| 8 | superuser and system administration commands | | 
 
 
 

@@ -1,3 +1,7 @@
+jekyll是由ruby开发的一个工具。
+
+
+
 jekyll是基于ruby实现的一个静态网站的工具
 
 
