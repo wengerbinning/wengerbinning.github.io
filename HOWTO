@@ -7,3 +7,10 @@ jekyll build
 ```shell
 jekyll serve
 ```
+
+If you change Gemfile you need run this command.
+
+```shell
+bundle update
+```
+

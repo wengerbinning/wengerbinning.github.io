@@ -1,21 +1,8 @@
-#
-# Website Basic Setting
-#
+# Site configuration
 
-site.title = "Wenger"
+##################
+# Themes Options #
+##################
 
-
-#
-# Website Theme 
-#
-
-theme: minima
-
-#
-# Website Plugins
-#
-
-plugins:
-  - jekyll-seo-tag
-  # plugin will auto create index.html from README.md.
-  - jekyll-readme-index
+#; theme: minima
+remote_theme: sighingnow/jekyll-gitbook
