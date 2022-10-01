@@ -1,8 +1,15 @@
 
 
-#
-# jeykyll
-#
+###########
+# jeykyll #
+###########
+
 _site/**
 .jekyll-cache/**
 .sass-cache/**
+
+#######
+# Gem #
+#######
+
+Gemfile.lock
