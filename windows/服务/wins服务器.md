@@ -1,0 +1,1 @@
+wins是将NetBIOS计算机名转化为IP地址。

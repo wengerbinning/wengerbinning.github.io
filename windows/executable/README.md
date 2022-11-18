@@ -1,0 +1,2 @@
+Windows系统下的可执行文件时PE(Portable Executable)，属于COFF的变种。中间目标文件与库以及可
+执行文件都采用这一种格式。
