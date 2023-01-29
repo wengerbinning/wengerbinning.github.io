@@ -1,0 +1,67 @@
+# Mandatory Variables
+
+# Package Name
+pkgbase=
+pkgname=
+# package Version
+pkgver=
+pkgrel=
+epoch=
+# Package Generic
+pkgdesc= 
+arch=
+url=
+license=
+groups=
+# Package Denpendencies
+depends=
+makedepends=
+checkdepends=
+optdepends=
+# Package Relations
+provides=
+conflicts=
+replaces=
+# Package Others
+backup=
+options=
+install=
+changlog=
+# Package Source
+source=
+noextract=
+vaildpgkeys=
+# Package Integrity
+cksums=
+md5sums=
+sha1sums=
+sha256sums=
+sha224sums=
+sha384sums=
+sha512sums=
+b2sums=
+https://github.com/wengerbinning/wengerbinning/archive/refs/tags/v0.1.0.1.tar.gz
+prepare() {
+	cd "$pkgname-$pkgver"
+	echo "Running in prepare."
+}
+
+build() {
+    cd "$pkgname-$pkgver"
+    echo "Running in build"
+    # ./configure --prefix=/usr
+    # make
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+    echo "Running in check"
+	# make -k check
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+    echo "Running in package"
+	# make DESTDIR="$pkgdir/" install
+}
+

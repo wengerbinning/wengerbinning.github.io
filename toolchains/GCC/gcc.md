@@ -2,6 +2,27 @@
 
 
 
+**options**
+
+
+| short option | value | comment |
+|:--- |:--- |
+| `-c` | - |
+| `-g` | - | 
+| `-E` |
+| `-S` |
+
+
+
+## 使用示例
+
+
+```c
+//
+gcc -o helloworld helloworld.c
+//
+gcc -g -o helloworld helloworld.c
+```
 
 **预处理**
 
@@ -62,6 +83,56 @@ gcc -c helloworld.s -o helloworld.o
 ```
 
 
+**库文件**
+
+* 静态库
+
+```shell
+ar 
+```
+
+
+* 共享库
+
+```shell
+#
+gcc -fPIC -c name.c
+# 
+gcc -shared -o libname.so name.o
+```
+
+
+```c
+gcc -fPIC -shared -o libname.so name.c
+```
+
+
+
 **链接**
 
 GCC中的链接器是ld
+
+```shell
+
+ld -static /usr/lib/crtl.o 
+```
+
+
+
+
+
+-static
+
+-shared
+
+-fPIC
+
+-fpic
+
+-fPIE
+
+-fpie
+
+
+
+
