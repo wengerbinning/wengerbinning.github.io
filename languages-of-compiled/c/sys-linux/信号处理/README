@@ -28,6 +28,7 @@ raise函数用于向自身进程发送信号。
 unsigned int alarm(unsigned int seconds);
 ```
 
+
 alarm函数用于设置一个定时器（闹钟时间），在经过seconds秒之后产生一个SIGALRM信号，每一个进程在同一时刻只能有一个
 闹钟时间；当多次设置时，如果上一次还未超时，则返回上一次距离超时还有多少秒；当seconds为0时，取消当前时刻的闹钟时间。
 
