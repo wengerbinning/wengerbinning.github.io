@@ -271,9 +271,18 @@ proc
 
 虚拟文件系统（VFS，Virtual FIle System）是通过对下层的文件系统进行统一封装，对上层提供统一的访问接口，例如mount、umount、open，close、mkdir等。
 
-## 设备文件系统
+## devfs
+<!-- develop author: Richard Gooch -->
+设备文件系统(devfs)是v2.4引入的文件系统。
 
-* devfs
+## udev
+
+udev作为一个devfs的替代方案在v2.6中引入， 用户态udev通过接收netlink来发送uevent事件来创建设备文件节点
+
+## sysfs
+
+系统文件系统(sysfs)是在v2.6引入的文件系统， 该文件系统用于提供一个系统硬件的层级视图。来展示设备驱动模型中各组件的层次关系
+
 
 * udev
 
@@ -283,3 +292,10 @@ proc
 
 
 ntfsd是一个特殊的文件系统，用于控制linux nfs server.
+
+
+
+
+
+
+
