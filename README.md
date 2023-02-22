@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is Wenger Binning's blog.Recording my life and study. if you like this blog, You can send message 
 by [email](wengerbinning@163.com) ☛ <wengerbinning@163.com>.👌
 
@@ -54,3 +55,6 @@ by [email](wengerbinning@163.com) ☛ <wengerbinning@163.com>.👌
 
 
 
+=======
+该仓库作为记录学习笔记的站点， 所有文档默认为markdown格式。
+>>>>>>> 51532a7 (Initialize the repository.)

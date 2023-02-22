@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 ###########
 # jeykyll #
@@ -16,3 +17,6 @@ Gemfile.lock
 
 
 .idea/**
+=======
+.vscode/**
+>>>>>>> 51532a7 (Initialize the repository.)
