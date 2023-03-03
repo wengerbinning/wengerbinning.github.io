@@ -70,3 +70,9 @@ qemu-system-x86_64 -nographic -name "Linux 3.10.14"
 ## 相关链接
 
 * <http://t.zoukankan.com/hellogc-p-7482066.html>
+
+
+
+  qemu-system-x86_64 -nographic \
+  -kernel vmlinuz \
+  -initrd initramfs.img
