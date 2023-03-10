@@ -5,6 +5,8 @@
 
 #### Protocol Families
 
+PF
+
 ```c
 /* Protocol families.  */
 #define PF_UNSPEC	    0	/* Unspecified.  */
@@ -61,6 +63,8 @@
 
 
 #### Address Families
+
+AF是基于地址, 如果在网络层之上开发,推荐使用AF.
 
 ```c
 /* Address families.  */

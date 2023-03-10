@@ -1,4 +1,4 @@
-该接口模块不要直接导入， 需要使用sys/socket接口模块。
+该接模块不要直接导入， 需要通过sys/socket模块间接使用。
 
 
 #### enum __socket_type
@@ -30,7 +30,17 @@ enum __socket_type {
 ```
 
 
+##### SOCK_STREAM
 
+##### SOCK_DGRAM
+
+##### SOCK_RAW
+
+##### SOCK_RDM
+
+##### SOCK_SEQPACKET
+
+##### SOCK_DCCP
 
 ##### SOCK_PACKET
 
@@ -39,4 +49,6 @@ enum __socket_type {
 <https://tldp.org/LDP/khg/HyperNews/get/khg/186/1.html>
 
 
+##### SOCK_CLOEXEC
 
+##### SOCK_NONBLOCK
