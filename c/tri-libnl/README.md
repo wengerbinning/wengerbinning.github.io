@@ -1,0 +1,3 @@
+# Netlink Protocol Library Suite
+
+The libnl suite is a collection of libraries providing APIs to netlink protocol based Linux kernel interfaces.
