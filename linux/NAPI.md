@@ -1,4 +1,4 @@
-New API(NAPI)是设备包处理驱动框架的一个扩展， 通过中断缓(Interrupt mitigation)和与数据包节流(Packet throttling)来提高网络性能。
+New API(NAPI)是在v2.6引入的设备包处理驱动框架的一个扩展， 通过中断缓(Interrupt mitigation)和与数据包节流(Packet throttling)来提高网络性能。
 
 
 #### Interrupt mitigation
@@ -17,3 +17,34 @@ When the system is overwhelmed and must drop packets, it's better if those packe
 New drivers should use NAPI if the hardware can support it. However, NAPI additions to the kernel do not break backward compatibility and drivers may still process completions directly in interrupt context if necessary.
 
 如果硬件支持，新的驱动程序应该使用NAPI。然而，添加到内核中的NAPI并不会破坏向后兼容性，如果有必要，驱动程序仍然可以直接在中断上下文中处理补全。
+
+
+
+
+
+ NonNAPI:
+
+neif_rx -> enqueue_to_backlog
+
+
+NAPI:
+
+__napi_schedule
+
+
+#### rx_softirq
+
+net_rx_action -> 
+
+
+process_backlog
+
+
+
+
+netif_receive_skb -> netif_receive_skb_internal -> __netif_receive_skb -> __netif_receive_skb_core
+
+第一次协议处理， tcodump 就是在这个注册一个协议来获取报文。
+__netif_receive_skb_core -> (pt_prev->func)
+
+
