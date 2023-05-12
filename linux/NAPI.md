@@ -27,24 +27,42 @@ New drivers should use NAPI if the hardware can support it. However, NAPI additi
 neif_rx -> enqueue_to_backlog
 
 
-NAPI:
 
-__napi_schedule
 
+#### 
+
+
+#### NAPI
+
+napi_schedule
+
+
+__napi_schedule -> ____napi_schedule -> __raise_softirq_irqoff
 
 #### rx_softirq
 
-net_rx_action -> 
+软中断处理流程
+
+ksoftirqd_should_run -> local_softirq_pending
+
+run_ksoftirqd -> __do_softirq
 
 
-process_backlog
+net_rx_action -> trace_napi_poll -> poll
 
 
 
+#### 协议栈入口 
+
+* 接收数据报文 进入协议栈的流程 
 
 netif_receive_skb -> netif_receive_skb_internal -> __netif_receive_skb -> __netif_receive_skb_core
 
 第一次协议处理， tcodump 就是在这个注册一个协议来获取报文。
+
 __netif_receive_skb_core -> (pt_prev->func)
+
+
+
 
 
