@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # Websites Basic Setting
 #
@@ -78,12 +79,42 @@ plugins:
 #; theme: minima
 remote_theme: sighingnow/jekyll-gitbook
 lsi: false
+=======
+
+### BASSIC ###
+
+# Disable non-whitelisted plugins, caching to disk, and ignore symbolic links.
+>>>>>>> 86de4d7 (Page(jekyll): Update configuration.)
 safe: true
-source: [WENGER BINNING HANDBOOK]
+
+
+### PLUGINS ###
+
+plugins:
+- jekyll-remote-theme
+
+
+### COMMON ###
+
+# Produce an index for related posts. Requires the classifier-reborn plugin.
+lsi: false
+# Enable the experimental incremental build feature.
 incremental: false
-highlighter: rouge
+
+
+### THEMES ###
+
+remote_theme: pages-themes/architect@v0.2.0
+
+title: WENGERBINNING HANDBOOK
+description: This is a handbook about all.
+
+
+### OTHERS ###
+
 gist:
   noscript: false
+
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
