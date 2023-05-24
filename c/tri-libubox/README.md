@@ -25,7 +25,7 @@ libubox/vlist.h
 libubox/sh/jshn.h
 ```
 
-模块提供的共享库
+* 模块提供的共享库
 
 ```txt
 libubox.so
@@ -33,7 +33,7 @@ libjson_script.so
 libblobmsg_json.so
 ```
 
-模块提供的可执行程序
+* 模块提供的可执行程序
 
 ```txt
 jshn
