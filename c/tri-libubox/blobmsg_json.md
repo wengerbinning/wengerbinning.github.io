@@ -43,9 +43,11 @@ out:
 ## 函数实现
 
 
-#### blobmsg_add_json_from_file
+#### [blobmsg_add_json_from_file](./api/blobmsg_json.md#blobmsg_add_json_from_file)
 
 ```c
+/* file: blobmsg_json.c */
+
 bool blobmsg_add_json_from_file (struct blob_buf *b, const char *file)
 {
     return __blobmsg_add_json(b, json_object_from_file(file));
