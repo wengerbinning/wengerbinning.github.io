@@ -7,7 +7,7 @@
 
 * blobmsg_json_format_t
 
-函数
+函数接口
 
 * blobmsg_add_object
 
