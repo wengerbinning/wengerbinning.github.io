@@ -369,3 +369,13 @@ void blobmsg_vprintf (struct blob_buf *buf, const char *name, const char *format
 ```c
 void blobmsg_printf(struct blob_buf *buf, const char *name, const char *format, ...) __attribute__((format(printf, 3, 4)));
 ```
+
+
+
+
+
+#### blobmsg_add_field
+
+```c
+int blobmsg_add_field (struct blob_buf *buf, int type, const char *name, const void *data, unsigned int len);
+```

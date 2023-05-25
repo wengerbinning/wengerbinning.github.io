@@ -1,14 +1,37 @@
 
-
+## Standard C Library
 
 
 
 
 ## Thrid Open Source Project
 
-#### [json-c](./tri-json-c/README.md)
 
-### OpenWrt
+#### glib
 
-#### [libubox](./tri-libubox/README.md)
+#### musl
+
+#### Uclibc
+
+
+#### [json-c](./tri-json-c/README.md) 是一个使用C语言实现的一个json文件的解析引擎。
+
+#### libxml
+
+
+#### jemalloc
+
+
+#### libevent
+
+#### libmnl
+
+#### libnl
+
+
+#### libwebsockets
+
+ OpenWrt
+
+#### [libubox](./tri-libubox/README.md) 是OpenWrt平台的一个基础库。提供基本的数据结构
 

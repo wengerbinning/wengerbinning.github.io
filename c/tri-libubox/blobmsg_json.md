@@ -54,3 +54,40 @@ bool blobmsg_add_json_from_file (struct blob_buf *b, const char *file)
 }
 ```
 
+#### blobmsg_add_json_element
+
+```c
+bool blobmsg_add_json_element (struct blob_buf *b, const char *name, json_object *obj)
+{
+	bool ret = true;
+	void *c;
+
+	if (!obj)
+		return false;
+
+	switch (json_object_get_type(obj)) {
+	case json_type_object:
+		c = blobmsg_open_table(b, name);
+		ret = blobmsg_add_object(b, obj);
+		blobmsg_close_table(b, c);
+		break;
+	case json_type_array:
+		c = blobmsg_open_array(b, name);
+		ret = blobmsg_add_array(b, json_object_get_array(obj));
+		blobmsg_close_array(b, c);
+		break;
+	case json_type_string:
+		blobmsg_add_string(b, name, json_object_get_string(obj));
+		break;
+	case json_type_boolean:
+		blobmsg_add_u8(b, name, json_object_get_boolean(obj));
+		break;
+	case json_type_int:
+		blobmsg_add_u32(b, name, json_object_get_int(obj));
+		break;
+	default:
+		return false;
+	}
+	return ret;
+}
+```
