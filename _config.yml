@@ -1,90 +1,7 @@
-<<<<<<< HEAD
-#
-# Websites Basic Setting
-#
-title: 
-  cn-name: 文彬的开发手册
-  en-name: Wenger handbook
-# Site configuration
-
-##################
-# Themes Options #
-##################
-
-author:
-  cn-name: 郑文彬
-  en-name: Wenger Binning
-  email:
-    - Netease: wengerbinning@163.com
-    - Gmail: wengerbinning@gmail.com
-
-#
-source: ./
-destination: ./_site
-layouts: ./_layouts
-data_source: ./_data
-plugins_dir: ./_plugins
-
-=======
-#theme: jekyll-theme-minimal
-# gitbook themes
-# remote_theme: sighingnow/jekyll-gitbook
-remote_theme: cotes2020/jekyll-theme-chirpy
-
-syntax_highlighter_style: colorful
-
-plugins:
-  - jekyll-coffeescript
-  # convert relative links to Markdown files to their rendered equivalents.
-  - jekyll-relative-links
-  - jekyll-paginate
-  - jekyll-github-metadata
-  - jekyll-avatar
-  - jekyll-mentions
-  - jemoji
-  - jekyll-feed
-  - jekyll-readme-index
-
-permalink:        /:categories/:year-:month-:day-:title:output_ext
-#theme: jekyll-theme-cayman
-
-# 
-collections:
-  home:
-    output: true
-    permalink: /:collection/:path/
-theme: jekyll-theme-cayman
-
-#
-# YMAL header information
-#
-default:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-  - scope:
-      path: "about"
-    values:
-      layout: "about"
-
-
-#
-# plugins
-#
-plugins:
-  # plugin will auto create index.html from README.md.
-  - jekyll-readme-index
-=======
-#; theme: minima
-remote_theme: sighingnow/jekyll-gitbook
-lsi: false
-=======
 
 ### BASSIC ###
 
 # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links.
->>>>>>> 86de4d7 (Page(jekyll): Update configuration.)
 safe: true
 
 
@@ -118,4 +35,3 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
->>>>>>> 0cc2e7f (Page(jekyll): Add configuration.)
