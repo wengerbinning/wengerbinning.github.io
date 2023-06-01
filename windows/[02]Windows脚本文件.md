@@ -48,7 +48,7 @@
 
   ```cmd
   @rem for的使用格式，variable只能是字符。
-  for {%%|%}<variable> in (<set>) do <command> [<commandlineoptions>]
+  for <variable> in (<set>) do <command> [<commandlineoptions>]
   @rem 遍历E与F盘目录下所有文件。
   for /r %%f in (e:,f:) do (@each %%f)
   @rem 使用迭代器测试192.168.43.0下所有IP地址。
