@@ -54,3 +54,44 @@ string.h
 * strncat
 * strncmp
 * strncpy
+
+
+### [stdint.h](./stdint.md)
+
+```c
+#include <bits/libc-header-start.h>
+#include <bits/types.h>
+#include <bits/wchar.h>
+#include <bits/wordsize.h>
+
+/* Exact integral types.  */
+
+/* Signed.  */
+#include <bits/stdint-intn.h>
+
+/* Unsigned.  */
+#include <bits/stdint-uintn.h>
+```
+
+
+```c
+/* Small types.  */
+
+/* Signed.  */
+typedef __int_least8_t int_least8_t;
+typedef __int_least16_t int_least16_t;
+typedef __int_least32_t int_least32_t;
+typedef __int_least64_t int_least64_t;
+
+/* Unsigned.  */
+typedef __uint_least8_t uint_least8_t;
+typedef __uint_least16_t uint_least16_t;
+typedef __uint_least32_t uint_least32_t;
+typedef __uint_least64_t uint_least64_t;
+```
+
+### [stdlib.h](./stdlib.md)
+
+* malloc
+
+### [math.h](./math.md)

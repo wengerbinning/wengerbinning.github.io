@@ -8,10 +8,40 @@
 
 ## 预处理
 
+
+#### JSON_OBJECT_DEF_HASH_ENTRIES
+
 ```c
 #define JSON_OBJECT_DEF_HASH_ENTRIES 16
+#define JSON_C_TO_STRING_PLAIN      0
+#define JSON_C_TO_STRING_SPACED     (1<<0)
+#define JSON_C_TO_STRING_PRETTY     (1<<1)
+#define JSON_C_TO_STRING_NOZERO     (1<<2)
 ```
 
+
+#### json_object_object_foreach
+
+```c
+// struct json_object *obj;
+// key is string
+// val is string
+json_object_object_foreach(obj, key, val)
+
+```
+
+```c
+# define json_object_object_foreach(obj,key,val) \
+	char *key;                                                                                        \
+	struct json_object *val __attribute__((__unused__));                                              \
+	for(struct lh_entry *entry ## key = json_object_get_object(obj)->head, *entry_next ## key = NULL; \
+		({ if(entry ## key) {                                                                           \
+			key = (char*)entry ## key->k;                                                                 \
+			val = (struct json_object*)entry ## key->v;                                                   \
+			entry_next ## key = entry ## key->next;                                                       \
+		} ; entry ## key; });                                                                           \
+		entry ## key = entry_next ## key )
+```
 
 ```c
 #define json_object_object_foreachC (obj,iter) \
@@ -127,14 +157,43 @@ JSON Obejct API
 
 #### json_object_get
 
+
+该函数会增加json对象引用计数器。
+
 ```c
 extern struct json_object *json_object_get (struct json_object *obj);
 ```
 
-#### json_object_object_add
+#### json_object_put
+
+该函数会减小json对象引用计数器。
 
 ```c
-extern void json_object_object_add (struct json_object* obj, const char *key, struct json_object *val);
+int json_object_put (struct json_object *obj);
+```
+
+#### json_object_is_type
+
+```c
+extern int json_object_is_type (struct json_object *obj, enum json_type type);
+```
+
+#### json_object_get_type
+
+```c
+extern enum json_type json_object_get_type (struct json_object *obj);
+```
+
+#### json_object_to_json_string
+
+```c
+extern const char *json_object_to_json_string (struct json_object *obj);
+```
+
+#### json_object_to_json_string_ext
+
+```c
+extern const char *json_object_to_json_string_ext (struct json_object *obj, int flags);
 ```
 
 #### json_object_new_object
@@ -143,12 +202,36 @@ extern void json_object_object_add (struct json_object* obj, const char *key, st
 extern struct json_object *json_object_new_object (void);
 ```
 
+#### json_object_get_object
+
+```c
+extern struct lh_table *json_object_get_object (struct json_object *obj);
+```
+
+#### json_object_object_length
+
+```c
+extern int json_object_object_length (struct json_object* obj);
+```
+
+#### json_object_object_add
+
+```c
+extern void json_object_object_add (struct json_object* obj, const char *key, struct json_object *val);
+```
+
 #### json_object_object_get_ex
 
 通过key值获json字段
 
 ```c
 extern json_bool json_object_object_get_ex (struct json_object* obj, const char *key, struct json_object **value);
+```
+
+#### json_object_object_del
+
+```c
+extern void json_object_object_del (struct json_object *obj, const char *key);
 ```
 
 #### json_object_object_length
@@ -162,7 +245,8 @@ extern int json_object_object_length (struct json_object *obj);
 
 
 
-Array API
+JSON Array API
+
 
 #### json_object_new_array
 
@@ -205,14 +289,18 @@ extern int json_object_array_put_idx (struct json_object *obj, int idx, struct j
 extern struct json_object *json_object_array_get_idx (struct json_object *obj, int idx);
 ```
 
-Boolearn
+JSON Boolearn API
+
+#### json_object_new_boolean
 
 ```c
-extern struct json_object* json_object_new_boolean(json_bool b);
+extern struct json_object *json_object_new_boolean (json_bool b);
 ```
 
+#### json_object_get_boolean
+
 ```c
-extern json_bool json_object_get_boolean(struct json_object *obj);
+extern json_bool json_object_get_boolean (struct json_object *obj);
 ```
 
 Intenger API
