@@ -133,6 +133,3 @@ ld -static /usr/lib/crtl.o
 
 -fpie
 
-
-
-
