@@ -56,7 +56,6 @@ string.h
 * strncpy
 
 
-### [stdint.h](./stdint.md)
 
 ```c
 #include <bits/libc-header-start.h>
