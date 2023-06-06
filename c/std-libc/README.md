@@ -93,5 +93,18 @@ typedef __uint_least64_t uint_least64_t;
 ### [stdlib.h](./stdlib.md)
 
 * malloc
+* calloc
+* realloc
+* free
+
+
+
+
 
 ### [math.h](./math.md)
+
+
+
+## LINKS
+
+*  malloc <https://blog.csdn.net/wang13342322203/article/details/80862382>

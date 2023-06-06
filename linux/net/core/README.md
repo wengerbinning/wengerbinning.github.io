@@ -1,4 +1,46 @@
 
+* core的源码列表
+
+socket
+
+* sock.o
+* request_sock.o
+* skbuff.o
+* datagram.o
+* stream.o
+* scm.o
+* gen_stats.o
+* gen_estimator.o
+* net_name_space.o
+* secure_seq.o
+* flow_dissector.o
+
+
+sys control
+
+```txt
+COFNIG_SYSCTL
+```
+
+* sysctl_net_core.o
+
+device
+
+* dev.o
+* ethool.o
+* dev_addr_lists.o
+* dst.o
+* netevent.o
+* neighbour.o
+* rtnetlink.o
+* utils.o
+* link_watch.o
+* filter.o
+* dev_ioctl.o
+* tso.o
+
+
+
 
 
 
