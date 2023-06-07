@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 ```txt
 stdio.h
 string.h

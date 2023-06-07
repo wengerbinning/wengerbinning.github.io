@@ -35,12 +35,16 @@ ALG的作用有：
 
 
 
-For instance, for Session Initiation Protocol (SIP) Back-to-Back User agent (B2BUA), an ALG can allow firewall traversal with SIP. If the firewall has its SIP traffic terminated on an ALG then the responsibility for permitting SIP sessions passes to the ALG instead of the firewall.
+For instance, for Session Initiation Protocol (SIP) Back-to-Back User agent (B2BUA), an ALG can allow firewall traversal
+with SIP. If the firewall has its SIP traffic terminated on an ALG then the responsibility for permitting SIP sessions 
+passes to the ALG instead of the firewall.
 例如， 在SIP的B2BUA场景中， ALG可以允许SIP穿透防火墙，如果SIP流量被防火墙阻止，ALG有责任代替防火墙传递SIP会话数据。
 
 
-Basically a NAT with a built-in ALG can rewrite information within the SIP messages and can hold address bindings until the session terminates.
+Basically a NAT with a built-in ALG can rewrite information within the SIP messages and can hold address bindings until 
+the session terminates.
 基本上， 内置ALG的NAT可以重写SIP数据中的信息，并保持地址绑定知道会话终止。
 
-A SIP ALG will also handle SDP in the body of SIP messages (which is used ubiquitously in VoIP to set up media endpoints), since SDP also contains literal IP addresses and ports that must be translated.
+A SIP ALG will also handle SDP in the body of SIP messages (which is used ubiquitously in VoIP to set up media 
+endpoints), since SDP also contains literal IP addresses and ports that must be translated.
 SIP ALG还将处理SIP消息中的SDP，因为SDP中包含有需要转换的地址与端口信息。
