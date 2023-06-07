@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+#### __qdisc_runn
+
+```c
+void __qdisc_run (struct Qdisc *q)
+{
+    int quota = weight_p;
+    int packets;
+
+    while (qdisc_restart(q, &packets)) {
+        quota -= packets;
+        if (quota <= 0 || need_resched()) {
+            __netif_schedule(q);
+            break;
+        }
+    }
+
+    qdisc_run_end(q);
+}
+```
