@@ -48,3 +48,9 @@ int new_fn () { return old_var; }
 * `packed`属性
 
 * `tls_model("tls_model")`
+
+
+
+## LINKS
+
+* <https://gcc.gnu.org/onlinedocs/gcc-4.8.5/gcc/Variable-Attributes.html#Variable-Attributes>
