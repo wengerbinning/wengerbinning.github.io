@@ -41,12 +41,62 @@ EXPORT_SYMBOL_GPL(br_notify_hook);
 
 <!-- private api -->
 
+#### br_switchdev_event
+
+```c
+static int br_switchdev_event (struct noifier_block *unsed, 
+    unsgined long event, void *ptr)
+{
+    struct net_device *dev = switchdev_noifier_info_to_dev(ptr);
+    struct net_bridge_port *p;
+    struct net_bridge *br;
+    struct switchdev_notifier_fdb_info *fdb_info;
+    int err = NOTIFY_DONE;
+
+    p = br_port_get_rtnl(dev);
+    if (!p)
+        goto out;
+    
+    br = p->br;
+
+    switch (event) {
+        case SWITCHDEV_FDB_ADD:
+            err = br_fdb_eaternal_learn_add(br, p, fdb_info->addr, fdb_info->vid);
+            if (err)
+                err = notifier_from_errno(err);
+            break;
+        case SWITCHDEV_FDB_DEL:
+            fdb_info = ptr;
+            err = br_fdb_external_learn_del(br, p, fdb_info->addr, fdb_info->vid);
+            if (err)
+                err = notifier_from_errno(err);
+            break;
+    }  
+
+out:
+    return err;
+}
+```
+
 #### br_net_exit
 
-<!--  -->
+```c
+static void __net_exit br_net_exit (struct net *net)
+{
+    struct net_device *dev;
+    LIST_HEAD(list);
 
+    rtnl_lock();
+    for_each_netdev(net, dev) {
+        if (dev->priv_flags & IFF_EBRIDGE)
+            br_dev_delete(dev, &list);
+    }
+    unregitser_netdevice_many(&list);
+    rtnl_unlock();
+}
+```
 
-
+<!-- module handle api  -->
 
 #### br_init
 
@@ -119,4 +169,32 @@ err_out:
 
 ```c
 module_init(br_init);
+```
+
+#### br_deinit
+
+```c
+statc void __exit br_deinit (void)
+{
+    stp_proto_unregister(&br_stp_proto);
+    br_netlink_fini();
+    unregister_switchdev_notifier(&br_switchdev_notifier);
+    unregister_netdevice_notifier(&br_device_notifier);
+    brioctl_set(NULL);
+    unregister_pernet_subsys(&br_net_ops);
+
+    rcu_barrier();
+
+    br_nf_core_fini();
+
+#if IS_ENABLED(CONFIG_ATM_LANE)
+    br_fdb_test_addr_hook = NULL;
+#endif /* CONFIG_ATM_LANE */
+
+    br_fdb_fini();
+}
+```
+
+```c
+module_exit(br_deinit);
 ```

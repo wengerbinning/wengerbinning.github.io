@@ -39,4 +39,4 @@ libblobmsg_json.so
 jshn
 ```
 
-具体模块的API请查看[api/README.md](./api/README.md)
+具体模块的API请查看[include/README.md](./include/README.md)

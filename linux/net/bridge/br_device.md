@@ -58,7 +58,7 @@ void br_dev_setup (struct net_device *dev)
     dev->netdev_ops = &br_netdev_ops;
     dev->destructor = &br_dev_free;
     dev->ethtool_ops = &br_ethtool_ops;
-    SET_NETDEV_DEVTYPE(dev, &br_type);
+    SET_NETDEV_DEVTYPE(dev, &c);
     dev->priv_flags = IFF_EBRIDGE | IFF_NO_QUEUE;
 
     dev->features = COMMON_FEATURES | NETIF_F_LLTX |
