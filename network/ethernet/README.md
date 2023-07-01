@@ -13,3 +13,21 @@
 
 
 
+Ethernet Frame header
+
+* 7B - Preamble
+* 1B - SFD, start frame delimiter
+
+Ethernet Frame size is 64 ~ 1522B
+
+* 06B - DST MAC
+* 06B - SRC MAC
+* 04B - 802.1Q TAG
+* 02B -  ETherType size 46 — 1500
+* XXB - Playload
+* 04B - FCS, Frame Check Sqeuence， 32 CRC
+
+Ethernet Frame Footer
+
+* 12B - IPG， Interpacket GAP
+

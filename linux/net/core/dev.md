@@ -1,6 +1,132 @@
 
 
 
+#### __dev_get_by_name
+
+```c
+struct net_device *__dev_get_by_name (struct net *net， const char *name)
+{
+    struct net_device *dev;
+    struct hlist_head *head = dev_name_hash(net, name);
+
+    hlist_for_each_entry (dev, head, name_list) {
+        if (!strncmp(dev->name, name, IFNAMSIZ))
+            return dev;
+    }
+
+    return NULL;
+}
+```
+
+```c
+EXPORT_SYMBOL(__dev_get_by_name);
+```
+
+#### dev_get_by_name_rcu
+
+```c
+struct net_device *dev_get_by_name_rcu (struct net *net， const char *name)
+{
+    struct net_device *dev;
+    struct hlist_head *head = dev_name_hash(net, name);
+
+    hlist_for_each_entry_rcu (dev, head, name_list) {
+        if (!strncmp(dev->name, name, IFNAMSIZ))
+            return dev;
+    }
+
+    return NULL;
+}
+```
+
+```c
+EXPORT_SYMBOL(dev_get_by_name_rcu);
+```
+
+#### dev_get_by_name
+
+```c
+struct net_device *dev_get_by_name (struct net *net, const char *name)
+{
+    struct net_device *dev;
+    rcu_read_lock();
+    dev = dev_get_by_name_rcu(net, name);
+    if (dev)
+        dev_hold(dev);
+    rcu_read_unlock();
+
+    return dev;
+}
+```
+
+```c
+EXPORT_SYMBOL(dev_get_by_name);
+```
+
+#### __dev_get_by_index
+
+```c
+struct net_device *__dev_get_by_index (struct net *net, int ifindex)
+{
+    struct net_device *dev;
+    struct hlist_head *head = dev_index_hash(net, index_hlist);
+
+    hlist_for_each_entry (dev, head, index_hlist) {
+        if (dev->ifindex == ifindex)
+            return dev;
+    }
+
+    return NULL;
+}
+```
+
+```c
+EXPORT_SYMBOL(__dev_get_by_index);
+```
+
+#### dev_get_by_index_rcu
+
+```c
+struct net_device *dev_get_by_index_rcu (struct net *net, int ifindex)
+{
+    struct net_device *dev;
+    struct hlist_head *head = dev_index_hash(net, ifindex);
+
+    hlist_for_each_entry_rcu (dev, head, index_hlist) {
+        if (dev->ifindex == ifindex)
+            return dev;
+    }
+
+    return NULL;
+}
+```
+
+```c
+EXPORT_SYMBOL(dev_get_by_index_rcu);
+```
+
+#### dev_get_by_index
+
+```c
+struct net_device *dev_get_by_index (struct net *net, int ifindex)
+{
+    struct net_device *dev;
+
+    rcu_read_lock();
+    dev = dev_get_by_index_rcu(net, ifindex);
+    if (dev)
+        dev_hold(dev);
+    rcu_read_unlock();
+
+    return dev;
+}
+```
+
+```c
+EXPORT_SYMBOL(dev_get_by_index);
+```
+
+
 
 #### __dev_xmit_skb
 
@@ -234,7 +360,162 @@ EXPORT_SYMBOL(__netif_schedule);
 #### __netif_receive_skb_core
 
 ```c
+static int __netif_receive_skb_core (struct sk_buff *skb, bool pfmemalloc)
+{
+    struct packet_type *ptype, *pt_prev;
+    rx_handler_func_t *rx_handler;
+    struct net_device *orig_dev;
+    bool deliver_exact = false;
+    int ret = NET_RX_DROP;
+    __be16 type;
+    int (*fast_recv)(struct sk_buff *skb);
 
+    net_timestamp_check(!netdev_tstamp_prequeue, skb);
+
+    trace_netif_receive_skb(skb);
+
+    orig_dev = skb->dev;
+
+    skb_reset_network_header(skb);
+    if (!skb_transport_header_was_set(skb))
+        skb_reset_transport_header(skb);
+
+    skb_reset_mac_len(skb);
+
+    pt_prev = NULL;
+
+another_round:
+    skb->skb_if = skb->dev->ifindex;
+
+    __this_cpu_inc(softnet_data.processed);
+    if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||
+        skb->protocol == cput_to_be16(ETH_P8021AD)) {
+        skb = skb_vlan_untag(skb);
+        if (unlikely(!skb))
+            goto out;
+    }
+
+    fast_recv = rcu_dereference(athrs_fast_nat_recv);
+    if (fast_recv) {
+        if (fast_recv(skb)) {
+            ret = NET_RX_SUCCESS;
+            goto out;
+        }
+    }
+
+#ifdef CONFIG_NET_CLS_ACT
+    if (skb->tc_verd & TC_NCLS) {
+        skb->tc_verd = CLR_TC_NCLS(skb->tc_verd);
+        goto ncls;
+    }
+#endif /* CONFIG_NET_CLS_ACT */
+
+    if (pfmemalloc) 
+        goto skip_taps;
+
+    list_for_each_entry_rcu(ptype, &ptype_all, list) {
+        if (pt_prev)
+            ret = deliver_skb(skb, pt_prev, orig_dev);
+
+        pt_prev = ptype;
+    }
+
+    list-for_each_entry_rcu(ptype, &skb->dev->ptype_all, list) {
+        if (pt_prev)
+            ret = deliver_skb(skb, pt_prev, orig_dev);
+
+        pt_prev = ptype;
+    }
+
+skip_taps:
+#ifdef CONFIG_NET_INGRESS
+    if (static_key_false(&ingress_needed)) {
+        skb = handle_ing(skb, &pt_prev, &ret, orig_dev);
+        if (!skb)
+            goto out;
+        
+        if (nf_ingress(skb, &pt_prev, &ret, orig_dev) < 0) {
+            goto out;
+        }
+    }
+#endif /* CONFIG_NET_INGRESS */
+
+#ifdef CONFIG_NET_CLS_ACT
+    skb->tc_verd = 0;
+ncls:
+#endif /* CONFIG_NET_CLS_ACT */
+
+    if(pfmemalloc && !skb_pfmemealloc_protocol(skb))
+        goto drop;
+    
+    if (skb_vlan_tag_present(skb)) {
+        if (pt_prev) {
+            ret = deliver_skb(skb, pt_prev, orig_dev);
+            pr_prev = NULL;
+        }
+
+        if (vlan_do_receive(&skb))
+            goto another_round;
+        else if (unlikely(!skb))
+            goto out; 
+    }
+
+    rx_handler = rcu_dereference(skb->dev->rx_handler);
+    if (rx_handler) {
+        if (pt_prev) {
+            ret = deliver_skb(skb, pt_prev, orig_dev);
+            pr_prev = NULL;
+        }
+
+        switch (rx_handler(&skb)) {
+            case RX_HANDLER_CONSUMED:
+                ret = NET_RX_SUCESS;
+                goto out;
+            case RX_HANDLER_ANOTHER:
+                goto another_round;
+            case RX_HANDER_EXACT:
+                deliver_exact = true;
+            case RX_HANDLER_PASS:
+                break;
+            default:
+                BUG();
+        }
+    }
+
+    if (unlikely(skb_vlan_tag_present(skb))) {
+        if (skb_vlan_tag_get_id(skb))
+            skb->pkt_type = PACKET_OTHERHOST;
+
+        skb->vlan_tci = 0;
+    }
+
+    type = skb->protocol;
+    if (likely(!deliver_exact)) {
+        deliver_ptype_list_skb(skb, &pt_prev, orig_dev, type, &ptype_base[ntohs(type) & PTYPE_HASH_MASK]);
+    }
+
+    deliver_ptype_list_skb(skb, &pt_prev, orig_dev, type, &orig_dev->ptype_specific);
+
+    if (unlikely(skb->dev != orig_dev)) {
+        deliver_ptype_list_skb(skb, &pt_prev, orig_dev, type, &skb->dev->ptype_specific);
+    }
+
+    if (pt_prev) {
+        if(unlikely(skb_orphan_frags(skb, GFP_ATOMIC)));
+            goto drop;
+        else
+            ret = pt_prev->func(skb, skb->dev, pr_prev, orig_dev);
+    } else {
+
+drop:
+        atomic_long_inc(&skb->dev->rx_dropped);
+        kfree_skb(skb);
+        ret = NET_RX_DROP;
+    }
+
+out:
+    return ret;
+}
 ```
 
 
