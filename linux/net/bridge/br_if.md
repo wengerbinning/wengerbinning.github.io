@@ -1,7 +1,18 @@
 
 
+## 数据对象
 
+#### br_port_dev_get_hook 
 
+```c
+br_port_dev_get_hook_t *br_port_dev_get_hook __read_mostly;
+```
+
+```c
+EXPORT_SYMBOL_GPL(br_port_dev_get_hook);
+```
+
+## 函数接口
 
 #### br_add_bridge
 
@@ -52,5 +63,49 @@ int br_del_bridge (struct net *net, const char *name)
     rtnl_unlock();
     
     return ret;
+}
+```
+
+
+#### br_port_dev_get
+
+```c
+struct net_device *br_port_dev_get (struct net_device *dev, 
+    unsigned char *addr, struct sk_buff *skb, unsigned int cookie)
+{
+    struct net_bridge_fdb_entry *fdbe;
+    struct net_bridge *br;
+    struct net_device netdev = NULL;
+
+    if (!(dev->priv_flags & IFF_EBRIDGE))
+        return NULL;
+    
+    rcu_read_lock();
+
+    if (skb) {
+        br_port_dev_get_hook_t *port_dev_get_hook;
+        port_dev_get_hook = rcu_dereference(br_port_dev_get_hook);
+        if (port_dev_get_hook) {
+            struct net_bridge_port *pdst = 
+                __br_get(port_dev_get_hook, NULL, dev, skb, addr, cookie);
+            if (pdst) {
+                dev_hold(pdst->dev);
+                netdev = pdst->dev;
+
+                goto out;
+            }
+        }
+    }
+
+    br = net_dev_priv(dev);
+    fdbe = __br_fdb_get(br, addr, 0);
+    if (fdbe && fdbe->dst) {
+        netdev = fdbe->dst->dev;
+        dev_hold(netdev);
+    }
+
+out:
+    rcu_read_unlock();
+    return netdev;
 }
 ```
