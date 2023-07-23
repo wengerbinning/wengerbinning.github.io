@@ -47,3 +47,26 @@
 ### [stdlib.h](./stdint.md)
 
 ### [math.h]()
+
+
+### [time.h](./time.md)
+
+
+#### 函数接口
+
+* clock
+* time
+* difftime
+* mktime
+* timelocal
+
+* strftime
+* strptime
+
+* nanosleep
+* clock_getres
+* clock_gettime
+* clock_settime
+
+* getdate
+* getdate_r
