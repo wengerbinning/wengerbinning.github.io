@@ -9,15 +9,20 @@ typedef unsigned char *sk_buff_data_t;
 #endif /* NET_SKBUFF_DATA_USER_OFFSET */
 ```
 
+
+## 数据结构
+
 #### struct sk_buff 
 
 ```c
 struct sk_buff 
 {
+    // 
     union {
         struct {
             struct sk_buff *next;
             struct sk_buff *prev;
+
             union {
                 ktime_t tstamp;
                 struct skb_mstamp skb_mstamp;
@@ -26,6 +31,7 @@ struct sk_buff
         struct rb_node rbnode;
     };
 
+    //
     struct sock *sk;
     struct net_device *dev;
 
@@ -112,18 +118,19 @@ struct sk_buff
         };
     };
 
-    __u32 priority;
-    int skb_if;
-    __u32 hash;
+    // 
+    __u32  priority;
+    int    skb_if;
+    __u32  hash;
     __be16 vlan_proto;
-    __u16   vlan_tci;
+    __u16  vlan_tci;
 
 #if defined(CONFIG_NET_RX_BUSY_POLL) || defined(CONFIG_XPS)
     union {
         unsigned int napi_id;
         unsigned int sender_cpu;
     };
-endif /* CONFIG_NET_RX_BUSY_POLL || CONFIG_XPS */
+#endif
 
     union {
 #ifdef CONFIG_NETWORK_SECMARK
@@ -166,8 +173,20 @@ endif /* CONFIG_NET_RX_BUSY_POLL || CONFIG_XPS */
     void *free_addr[DEBUG_OBJECT_SKBUFF_STACKSIZE];
     void *alloc_addr[DEBUG_OBJECT_SKBUFF_STACKSIZE];
     u32 sum;
-#endif /* CONFIG_DEBUG_OBJECT_SKBUFF */
+#endif
 
     __u32 pkt_mark;
 };
+```
+
+
+## 函数接口
+
+#### skb_mac_header
+
+```c
+static inline unsigned char *skb_mac_header (const struct sk_buff *skb)
+{
+    return skb->head + skb->mac_headers;
+}
 ```

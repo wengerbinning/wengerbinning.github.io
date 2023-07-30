@@ -1,4 +1,28 @@
 
+## 预处理宏
+
+```c
+#define BR_HASH_BITS 8
+#define BR_HASH_SIZE (1 << BR_HASH_BITS)
+
+#define BR_HOLD_TIME (1 * HZ)
+
+#define BR_PORT_BITS 10
+#define BR_MAX_PORTS (1 << BR_PORT_BITS)
+
+#define BR_VERSION "2.3"
+
+
+#define BR_GROUPFWD_DEFAULT 0
+#define BR_GROUPFWD_RESTRICTED 0x0007U
+#define BR_GROUDFWD_8021AD 0xB801U
+
+#define BR_STP_PROG "/sbin/bridge-stp"
+
+
+
+#define BR_INPUT_SKB_CB(__skb)   ((struct br_input_skb_cb *)(__skb)->cb)
+```
 
 ## 数据结构
 
@@ -97,7 +121,7 @@ struct net_bridge_vlan_group
 ```c
 struct net_bridge_fdb_entry
 {
-    struct hlist_node hlist;
+    struct hlist_node       hlist;
     struct net_bridge_port *dst;
 
     unsigned long updated;
@@ -106,29 +130,21 @@ struct net_bridge_fdb_entry
     mac_addr addr;
     __u16 vlan_id;
     unsigned char is_local: 1, is_static: 1, 
-                  added_by_user: 1, added_by_external_learn: 1;
+                  added_by_user: 1, 
+                  added_by_external_learn: 1;
     struct rcu_head rcu;
-}
-```
-
-#### struct net_bridge_port_group
-
-```c
-struct net_bridge_port_group
-{
-    struct net_bridge_port *port;
-    struct net_bridge_port_group __rcu *next;
-    struct hlist_node mqlist;
-    struct rcu_head rcu;
-    struct timer_list timer;
-    struct br_ip addr;
-    unsigned char state;
-    unsigned char eth_addr[ETH_ALEN];
-    bool unicast; 
 };
 ```
 
 #### struct net_bridge_mdb_entry
+
+```c
+struct net_bridge_mdb_entry {
+    struct hlist_node   hlist[2];
+    struct net_bridge  *br;
+    struct net_bridge_port_group __rcu *ports;
+}
+```
 
 #### struct net_bridge_mdb_htable
 
@@ -194,7 +210,22 @@ struct net_bridge_port
 #define br_port_exists(dev) (dev->priv_flags & IFF_BRIDGE_PORT)
 ```
 
+#### struct net_bridge_port_group
 
+```c
+struct net_bridge_port_group
+{
+    struct net_bridge_port *port;
+    struct net_bridge_port_group __rcu *next;
+    struct hlist_node mqlist;
+    struct rcu_head rcu;
+    struct timer_list timer;
+    struct br_ip addr;
+    unsigned char state;
+    unsigned char eth_addr[ETH_ALEN];
+    bool unicast; 
+};
+```
 
 #### struct net_bridge
 
@@ -207,7 +238,7 @@ struct net_bridge
 
     struct pcpu_sw_netstatss __percpu *stats;
     spinlock_t hash_lock;
-    struct hlist_head hash[BR_HASH_SIZE];
+    struct hlist_head hash[BR_HASH_SIZE];               // FDB ?
 
 #if IS_ENABLE(CONFIG_BRIDGE_NETFILTER)
     union {
@@ -280,7 +311,7 @@ struct net_bridge
     struct bridge_mcast_own_query ip6_own_query;
     struct bridge_mcast_querier ip6_querier;
 #endif
-#endif /* CONFIG_BRIDGE_IGMP_SNOOPING */
+#endif
 
     struct timer_list hello_timer;
     struct timer_list tcn_timer;
@@ -294,7 +325,7 @@ struct net_bridge
     u8 vlan_enabled;
     __be16 vlan_proto;
     u16 default_pvid;
-#endif /* CONFIG_BRIDGE_VLAN_FILTERING */
+#endif
 };
 ```
 
@@ -321,32 +352,6 @@ struct br_input_skb_cb
 ```c
 #define BR_INPUT_SKB_CB(__skb) ((struct br_input_skb_cb *)(__skb)->cb)
 ```
-
-## 数据对象
-
-#### macro
-
-```c
-#define BR_HASH_BITS 8
-#define BR_HASH_SIZE (1 << BR_HASH_BITS)
-
-#define BR_HOLD_TIME (1 * HZ)
-
-#define BR_PORT_BITS 10
-#define BR_MAX_PORTS (1 << BR_PORT_BITS)
-
-#define BR_VERSION "2.3"
-
-
-#define BR_GROUPFWD_DEFAULT 0
-#define BR_GROUPFWD_RESTRICTED 0x0007U
-#define BR_GROUDFWD_8021AD 0xB801U
-
-#define BR_STP_PROG "/sbin/bridge-stp"
-```
-
-####
-
 
 ## 函数接口
 

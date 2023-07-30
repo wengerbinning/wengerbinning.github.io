@@ -1,0 +1,6 @@
+
+
+
+
+
+CONFIG_DYNAMIC_DEBUG = y
