@@ -1,0 +1,15 @@
+61a4577c9a44 Linux 4.4.59
+2bed5987692c sched/rt: Add a missing rescheduling point
+7a5202190810 fscrypt: remove broken support for detecting keyring key revocation
+573341eba9c4 metag/ptrace: Reject partial NT_METAG_RPIPE writes
+e441102d8c07 metag/ptrace: Provide default TXSTATUS for short NT_PRSTATUS
+2d9bc3695012 metag/ptrace: Preserve previous registers for short regset write
+962b95a88574 sparc/ptrace: Preserve previous registers for short regset write
+c8693666856c mips/ptrace: Preserve previous registers for short regset write
+e1dc8904b33b h8300/ptrace: Fix incorrect register transfer count
+6e174bbd0631 c6x/ptrace: Remove useless PTRACE_SETREGSET implementation
+800791e7e0fd pinctrl: qcom: Don't clear status bit on irq_unmask
+927d04793f8a virtio_balloon: init 1st buffer in stats vq
+22c9e7c092f6 xfrm_user: validate XFRM_MSG_NEWAE incoming ESN size harder
+cce7e56dd73f xfrm_user: validate XFRM_MSG_NEWAE XFRMA_REPLAY_ESN_VAL replay_window
+a9a76a3e318e xfrm: policy: init locks early

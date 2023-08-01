@@ -1,0 +1,27 @@
+8f8ee9706b0a Linux 4.4.60
+84bd21a708b8 padata: avoid race in reordering
+5cca175b6cda blk: Ensure users for current->bio_list can see the full list.
+2cbd78f4239b blk: improve order of bio handling in generic_make_request()
+063d30f187f5 power: reset: at91-poweroff: timely shutdown LPDDR memories
+42462d23e60b KVM: kvm_io_bus_unregister_dev() should never fail
+3a1246b46df5 rtc: s35390a: improve irq handling
+a55ae9d1937b rtc: s35390a: implement reset routine as suggested by the reference
+fdd4bc9313e5 rtc: s35390a: make sure all members in the output are set
+b3ed3864912e rtc: s35390a: fix reading out alarm
+6280ac931a23 MIPS: Lantiq: Fix cascaded IRQ setup
+47e2fe17d14d mm, hugetlb: use pte_present() instead of pmd_present() in follow_huge_pmd()
+ef55c3df5dbd drm/radeon: Override fpfn for all VRAM placements in radeon_evict_flags
+3eb392056aeb KVM: x86: clear bus pointer when destroyed
+eac3ab3e6915 USB: fix linked-list corruption in rh_call_control()
+0a1757cfa5ba tty/serial: atmel: fix TX path in atmel_console_write()
+74b8fc017d76 tty/serial: atmel: fix race condition (TX+DMA)
+566a8711a7dd ACPI: Do not create a platform_device for IOAPIC/IOxAPIC
+3342857ac074 ACPI: Fix incompatibility with mcount-based function graph tracing
+ab48ab614b8c ASoC: atmel-classd: fix audio clock rate
+ce3dcfdbff04 ALSA: hda - fix a problem for lineout on a Dell AIO machine
+a90d7447e4a1 ALSA: seq: Fix race during FIFO resize
+75a03869c93a scsi: libsas: fix ata xfer length
+a92f411914ca scsi: sg: check length passed to SG_NEXT_CMD_LEN
+18639c4bad72 scsi: mpt3sas: fix hang on ata passthrough commands
+1eed198ce16b xen/setup: Don't relocate p2m over existing one
+ba46d8fab00a libceph: force GFP_NOIO for socket allocations
