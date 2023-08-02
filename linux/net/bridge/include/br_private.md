@@ -21,18 +21,42 @@
 
 
 
-#define BR_INPUT_SKB_CB(__skb)   ((struct br_input_skb_cb *)(__skb)->cb)
+#define BR_INPUT_SKB_CB(__skb) ((struct br_input_skb_cb *) (__skb)->cb)
+
+// DEBUG API
+
+#define br_printk(level, br, format, args...) \
+    printk(level "%s: "format, (br)->dev->name, ##args)
+
+#define br_err(__br, format, args...) \
+    br_printk(KERN_ERR, __br, format, ##args)
+#define br_warn(__br, format, args...) \
+    br_printk(KERN_WARNING, __br, format, ##args)
+#define br_notice(__br, format, args...) \
+    br_printk(KERN_NOTICE, __br, format, ##args)
+#define br_info(__br, format, args...) \
+    br_printk(KERN_INFO, __br, format, ##args)
+#define br_debug(__br, format, args...) \
+    pr_debug("%s: " format, (br)->dev->name, ##args)
 ```
+
+## 模块依赖
+
+* linux/rhashtable.h
+* linux/export.h
+* linux/netfilter.h
+* linux/netdevice.h
+* linux/if_bridge.h
+* linux/netpoll.h
+* linux/u64_stats_sync.h
+* linux/if_vlan.h
+
+* net/route.h
+* net/ip6_fib.h
+
+* br_private.h
 
 ## 数据结构
-
-#### typedef
-
-```c
-typedef struct bridge_id bridge_id;
-typedef struct mac_addr mac_addr;
-typedef _u16 port_id;
-```
 
 #### struct bridge_id
 
@@ -44,6 +68,10 @@ struct bridge_id
 };
 ```
 
+```c
+typedef struct bridge_id bridge_id;
+```
+
 #### struct mac_addr
 
 ```c
@@ -51,6 +79,10 @@ struct mac_addr
 {
     unsigned char addr[ETH_ALEN];
 };
+```
+
+```c
+typedef struct mac_addr mac_addr;
 ```
 
 #### struct bridge_mcast_own_query
@@ -116,39 +148,11 @@ struct net_bridge_vlan_group
 };
 ```
 
-#### struct net_bridge_fdb_entry
-
-```c
-struct net_bridge_fdb_entry
-{
-    struct hlist_node       hlist;
-    struct net_bridge_port *dst;
-
-    unsigned long updated;
-    unsigned long used;
-
-    mac_addr addr;
-    __u16 vlan_id;
-    unsigned char is_local: 1, is_static: 1, 
-                  added_by_user: 1, 
-                  added_by_external_learn: 1;
-    struct rcu_head rcu;
-};
-```
-
-#### struct net_bridge_mdb_entry
-
-```c
-struct net_bridge_mdb_entry {
-    struct hlist_node   hlist[2];
-    struct net_bridge  *br;
-    struct net_bridge_port_group __rcu *ports;
-}
-```
-
-#### struct net_bridge_mdb_htable
-
 #### struct net_bridge_port
+
+```c
+typedef _u16 port_id;
+```
 
 ```c
 struct net_bridge_port 
@@ -226,6 +230,38 @@ struct net_bridge_port_group
     bool unicast; 
 };
 ```
+
+#### struct net_bridge_fdb_entry
+
+```c
+struct net_bridge_fdb_entry
+{
+    struct hlist_node       hlist;
+    struct net_bridge_port *dst;
+
+    unsigned long updated;
+    unsigned long used;
+
+    mac_addr addr;
+    __u16 vlan_id;
+    unsigned char is_local: 1, is_static: 1, 
+                  added_by_user: 1, 
+                  added_by_external_learn: 1;
+    struct rcu_head rcu;
+};
+```
+
+#### struct net_bridge_mdb_entry
+
+```c
+struct net_bridge_mdb_entry {
+    struct hlist_node   hlist[2];
+    struct net_bridge  *br;
+    struct net_bridge_port_group __rcu *ports;
+}
+```
+
+#### struct net_bridge_mdb_htable
 
 #### struct net_bridge
 
@@ -350,7 +386,7 @@ struct br_input_skb_cb
 ```
 
 ```c
-#define BR_INPUT_SKB_CB(__skb) ((struct br_input_skb_cb *)(__skb)->cb)
+
 ```
 
 ## 函数接口
@@ -358,19 +394,7 @@ struct br_input_skb_cb
 #### macro func
 
 ```c
-#define br_printk(level, br, format, args...) \
-    printk(level "%s: "format, (br)->dev->name, ##args)
 
-#define br_err(__br, format, args...) \
-    br_printk(KERN_ERR, __br, format, ##args)
-#define br_warn(__br, format, args...) \
-    br_printk(KERN_WARNING, __br, format, ##args)
-#define br_notice(__br, format, args...) \
-    br_printk(KERN_NOTICE, __br, format, ##args)
-#define br_info(__br, format, args...) \
-    br_printk(KERN_INFO, __br, format, ##args)
-#define br_debug(__br, format, args...) \
-    pr_debug("%s: " format, (br)->dev->name, ##args)
 ```
 
 #### br_port_get_rcu
