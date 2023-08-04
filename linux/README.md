@@ -206,7 +206,6 @@ init(pid=1)进程开始属于内核态进程，然后在运行一个用户态ini
 
 * include/asm-generic/
 * include/uapi/asm-generic/
-* user_headers/include/asm-generic/
 
 * arch/${ARCH}/include/asm/
 * arch/${ARCH}/include/uapi/asm/
@@ -214,4 +213,3 @@ init(pid=1)进程开始属于内核态进程，然后在运行一个用户态ini
 
 * include/
 * include/uapi/
-* user_headers/include/
