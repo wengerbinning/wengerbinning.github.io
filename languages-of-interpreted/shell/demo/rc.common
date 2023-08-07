@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "This is rc.common script."
-
-echo "|$0|$#|$@|"
