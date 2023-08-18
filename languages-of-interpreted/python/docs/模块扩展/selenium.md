@@ -1,3 +1,0 @@
-
-chromedriver
-phantomjs

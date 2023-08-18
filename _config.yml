@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #
 # Websites Basic Setting
 #
@@ -8,11 +9,15 @@ title:
 =======
 # Site configuration
 >>>>>>> f430270 (update daily)
+=======
+# Site configuration
+>>>>>>> 164ee1b1b974df95c8e4a373dcba81284f982e7d
 
 ##################
 # Themes Options #
 ##################
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 author:
   cn-name: 郑文彬
@@ -90,3 +95,7 @@ plugins:
 #; theme: minima
 remote_theme: sighingnow/jekyll-gitbook
 >>>>>>> f430270 (update daily)
+=======
+#; theme: minima
+remote_theme: sighingnow/jekyll-gitbook
+>>>>>>> 164ee1b1b974df95c8e4a373dcba81284f982e7d
