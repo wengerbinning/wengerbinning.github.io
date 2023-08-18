@@ -196,3 +196,20 @@ init(pid=1)进程开始属于内核态进程，然后在运行一个用户态ini
 [Version 7 UNIX](https://zh.wikipedia.org/wiki/Version_7_Unix)
 [UNIX System III](https://zh.m.wikipedia.org/zh-hans/UNIX_System_III)
 
+
+
+
+
+
+#### include
+
+
+* include/asm-generic/
+* include/uapi/asm-generic/
+
+* arch/${ARCH}/include/asm/
+* arch/${ARCH}/include/uapi/asm/
+* 
+
+* include/
+* include/uapi/

@@ -1,31 +1,54 @@
 
+## 预定义宏
+
+```c
+#define NETDEV_UP                   0x0001
+#define NETDEV_DOWN                 0x0002
+#define NETDEV_REBOOT               0x0003
+#define NETDEV_CHANGE               0x0004
+#define NETDEV_REGISTER             0x0005
+#define NETDEV_UNREGISTER           0x0006
+#define NETDEV_CHANGEMTU            0x0007
+#define NETDEV_CHANGEADDR           0x0008
+#define NETDEV_GOING_DOWN           0x0009
+#define NETDEV_CHANGENAME           0x000A
+#define NETDEV_FEAT_CHANGE          0x000B
+#define NETDEV_BINDING_FAILOVER     0x000C
+#define NETDEV_PRE_UP               0x000D
+#define NETDEV_PRE_TYPE_CHANGE      0x000E
+#define NETDEV_POST_TYPE_CHANGE     0x000F
+
+#define NETDEV_BR_JOIN              0x001B
+#define NETDEB_BR_LEAVE             0x001C
+```
+
 ## 数据结构
 
-####
+#### enum netdev_priv_flags
 
 ```c
 enum netdev_priv_flags {
-    IFF_802_1Q_VLAN             = 0x1 << 0x0;
-    IFF_EBRIDGE                 = 0x1 << 0x1;
-    IFF_BPUNDING                = 0x1 << 0x2;
-    IFF_ISATAP                  = 0x1 << 0x3;
-    IFF_WAN_HDLC                = 0x1 << 0x4;
-    IFF_XMIT_DST_RELEASE        = 0x1 << 0x5;
-    IFF_DONT_BRIDGE             = 0x1 << 0x6;
-    IFF_DISABLE_NETPOLL         = 0x1 << 0x7;
-    IFF_MACVLAN_PORT            = 0x1 << 0x8;
-    IFF_BRIDGE_PORT             = 0x1 << 0x9;
-    IFF_OVS_DATAPATH            = 0x1 << 0xA;
-    IFF_TX_SKB_SHARING          = 0x1 << 0xB;
-    IFF_UNICAST_FIT             = 0x1 << 0xC;
-    IFF_TEAM_PORT               = 0x1 << 0xD;
-    IFF_SUPP_NOFCS              = 0x1 << 0xE;
-    IFF_LIVE_ADDR_CHANGE        = 0x1 << 0xF;
-    IFF_MAXVLAN                 = 0x1 << 0x10;
-    IFF_XMIT_DST_RELEASE_PERM   = 0x1 << 0x11;
-    IFF_L3DEV_MASTER            = 0x1 << 0x12;
-    IFF_NO_QUQUE                = 0x1 << 0x13;
-    IFF_OPENVSWITCH             = 0x1 << 0x14;
+    IFF_802_1Q_VLAN             = 0x1 <<  1;
+    IFF_EBRIDGE                 = 0x1 <<  2;
+    IFF_BPUNDING                = 0x1 <<  3;
+    IFF_ISATAP                  = 0x1 <<  4;
+    IFF_WAN_HDLC                = 0x1 <<  5;
+    IFF_XMIT_DST_RELEASE        = 0x1 <<  6;
+    IFF_DONT_BRIDGE             = 0x1 <<  7;
+    IFF_DISABLE_NETPOLL         = 0x1 <<  8;
+    IFF_MACVLAN_PORT            = 0x1 <<  9;
+    IFF_BRIDGE_PORT             = 0x1 << 10;
+    IFF_OVS_DATAPATH            = 0x1 << 11;
+    IFF_TX_SKB_SHARING          = 0x1 << 12;
+    IFF_UNICAST_FIT             = 0x1 << 13;
+    IFF_TEAM_PORT               = 0x1 << 14;
+    IFF_SUPP_NOFCS              = 0x1 << 15;
+    IFF_LIVE_ADDR_CHANGE        = 0x1 << 16;
+    IFF_MAXVLAN                 = 0x1 << 17;
+    IFF_XMIT_DST_RELEASE_PERM   = 0x1 << 18;
+    IFF_L3DEV_MASTER            = 0x1 << 19;
+    IFF_NO_QUQUE                = 0x1 << 20;
+    IFF_OPENVSWITCH             = 0x1 << 21;
     IFF_L3MDEV_SLAVE            
     IFF_TEAM
     IFF_RXTH_CONFIGURED
@@ -54,7 +77,7 @@ struct net_device
     unsigned long mem_addr;
     int irq;
     
-    atomic_t carrier_carrier_changes;
+    atomic_t carrier_changes;
 
     unsigned long state;
 
@@ -77,9 +100,11 @@ struct net_device
 
     int __percpu *pcpu_refcnt;
     struct list_head todo_list;
+    struct list_head link_watch_list;
 
     // ...
 
+    bool proto_down;
 }
 ```
 
