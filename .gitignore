@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-<<<<<<< HEAD
 
 ###########
 # jeykyll #
@@ -18,9 +15,4 @@ Gemfile.lock
 
 
 .idea/**
-=======
 .vscode/**
->>>>>>> 51532a7 (Initialize the repository.)
-=======
-.vscode/**
->>>>>>> f200667 (network: Update framework.)
