@@ -8,7 +8,7 @@ var="abcdefghijklmnop:QRSTUVWXYZABCDEFGHIJKLMNOP:qrstuvwxyz0123456789"
 ```
 
 
-## 变量使用
+## 变量应用
 
 ```shell
 echo $var
@@ -37,4 +37,24 @@ shell
 var=br-lan.5
 
 echo ${var//[-.]/_}  # br_lan_5
+```
+
+
+* 多行打印
+
+```shell
+
+DESCRIPTION=$(cat <<EOF
+This is a documents about version>
+
+ dewdwedewdwe
+
+ dwedwedwe
+
+EOF
+)
+
+echo "$DESCRIPTION" # 加引号会打印多行，如果其中有转移字符，还需要使用 
+
+
 ```
