@@ -1,2 +1,1 @@
-知识产权(IP, Intellectual Property)是指人们的智力成果所具有的权利，包含专利
-商标、版权等。
+知识产权(IP, Intellectual Property)是指人们的智力成果所具有的权利，包含专利、商标、版权等。
