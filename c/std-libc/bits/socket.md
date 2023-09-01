@@ -1,5 +1,5 @@
 
-
+## 预处理宏
 
 <!-- Protocol Families -->
 
@@ -121,4 +121,23 @@ AF是基于地址, 如果在网络层之上开发,推荐使用AF.
 ```
 
 
+#### _SS_PADSIZE
 
+```c
+#define __ss_aligntype unsigned long int
+#define _SS_SIZE    (_SS_SIZE - __SOCKADDR_COMMON_SIZE - sizeof(__ss_aligntype))
+```
+
+
+
+## 数据结构
+
+#### struct sockaddr
+
+```c
+struct sockaddr
+{
+    __SOCKADDR_COMMON(sa_);
+    char sa_data[14];
+};
+```

@@ -1,6 +1,15 @@
 
 
 
+Legacy
+b       WiFi1
+a       WiFi2
+g       WiFi3
+n       WiFi4
+AC      WiFi5 5G
+AX      WiFi6
+BE      WiFi7
+
 
 
 
