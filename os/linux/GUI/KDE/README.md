@@ -1,0 +1,6 @@
+
+
+
+
+* /usr/share/applications/*.desktop
+

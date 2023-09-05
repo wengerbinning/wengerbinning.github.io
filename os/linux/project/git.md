@@ -60,6 +60,13 @@ git archive master --format=tar.gz --output=../master.tar.gz
 
 
 
+
+
 ## LINKS
 
-* <https://git-scm.conm>
+
+
+[Git官网](https://git-scm.com/) 👉 <https://git-scm.com/>
+ 
+  * [文档](https://git-scm.com/doc) 👉 <https://git-scm.com/doc>
+  * [手册](https://git-scm.com/docs) 👉 <https://git-scm.com/docs>

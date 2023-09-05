@@ -1,0 +1,8 @@
+printk
+
+
+
+
+
+cmdline argument:
+printk.synchronous=1
