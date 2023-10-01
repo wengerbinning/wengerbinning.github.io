@@ -1,15 +1,10 @@
 
-
-
-
 ```c
 CONFIG_PREEMPT = y 
 CONFIG_DEBUG_KERNEL = y 
 CONFIG_KLLSYMS = y 
 CONFIG_SPINLOCK_SLEEP = y
 ```
-
-
 
 
 ```c
