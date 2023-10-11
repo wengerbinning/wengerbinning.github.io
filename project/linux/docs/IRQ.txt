@@ -1,0 +1,24 @@
+中断处理
+
+
+
+
+硬中断
+======
+
+
+cat /proc/interrupt
+
+
+
+
+软中断
+======
+
+cat /proc/softirq
+
+
+
+
+
+* <http://arthurchiao.art/blog/linux-net-stack-tuning-rx-zh/>

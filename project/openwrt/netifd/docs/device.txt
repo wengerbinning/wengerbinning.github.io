@@ -1,0 +1,3 @@
+
+simple_device_type  "Network device"
+bridge_device_type  "bridge"

@@ -13,3 +13,22 @@
 
 * __raw_notifier_call_chain
 * rae_notifiler_call_chain
+
+
+
+
+#### softirq.o
+
+
+* ksoftirqd_should_run
+* run_ksoftirqd
+
+* cpu_callback
+* cput_nfb
+* softirq_threads
+* spawn_ksoftirqd
+
+
+
+
+

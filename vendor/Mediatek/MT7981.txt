@@ -1,0 +1,81 @@
+WiFi SoC
+
+
+
+2022
+
+
+
+Filogic 820
+
+
+
+
+ARCH: ARM, Cortex-A53, 
+
+
+WiFI: abgn + ac + ax
+
+
+
+
+
+MT7981A(V)
+----------
+
+2p 2.5GbE IF, 
+2x PCIe 2.0, 
+RGMII/SGMII
+Wi-Fi 6E (160MHz), 
+NAPT, 
+HQoS, 
+USB
+SATA 3.0/eSATA,
+SDXC/eMMC flash
+ADC,
+IR, 
+PMIC,
+PWM,
+RTC,
+SPI,
+UART
+
+
+
+MT7981B(A/V)
+------------
+2p 2.5GbE IF, 
+2x PCIe 2.0, 
+RGMII/SGMII
+Wi-Fi 6E (160MHz),
+NAPT, 
+HQoS, 
+USB
+SDXC/eMMC flash, 
+GPIO, 
+I2C,
+I2S
+PMIC, 
+PWM, 
+SPI, 
+UART
+
+
+
+
+
+## DEVICES
+
+GL.iNet GL-MT2500A (Brume 2)
+
+
+
+
+## LINKS
+
+
+
+<https://www.totolink.net/home/menu/newstpl/menu_newstpl/products/id/247.html>
+<https://www.acwifi.net/19837.html>
+<https://wikidevi.wi-cat.ru/TP-LINK_TL-XDR3030>
+<https://www.acwifi.net/24868.html>

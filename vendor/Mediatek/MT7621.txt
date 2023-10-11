@@ -1,0 +1,56 @@
+SoC
+Arch: MIPS (1004Kc)
+
+
+
+
+
+
+
+MT7621A(T)
+---------- 
+5p GbE, 
+1x RGMII, 
+3x PCIe,
+1x USB 3.0, 
+2x USB 2.0,
+L1-32/32kB, 
+L2-256kB, 
+DDR2/DDR3 256/512MB
+TFBGA378,
+HNAT
+NAPT
+HQoS
+HW Crypto Engine
+UART
+JTAG
+
+MT7621DA(T)
+-----------
+5p GbE,
+1x RGMII,
+3x PCIe,
+1x USB 3.0,
+2x USB 2.0,
+L1-32/32kB,
+L2-256kB, 
+int. RAM 128MB (DDR3),
+HNAT
+NAPT
+HQoS
+HW Crypto Engine
+UART
+JTAG
+
+
+MT7621N(T)
+----------
+MT7621NT, 2x RGMII, 2x PCIe, 1x USB 3.0, 2x USB 2.0,
+L1-32/32kB, L2-256kB, DDR2 256MB,
+HNAT, NAPT, HQoS, HW Crypto Engine, UART, JTAG
+
+MT7621S(T)
+----------
+MT7621ST, 5p GbE, 1x RGMII, 3x PCIe, 1x USB 3.0, 2x USB 2.0,
+L1-32/32kB, L2-256kB, DDR2/DDR3 256/512MB, LFBGA346
+HNAT, NAPT, HQoS, HW Crypto Engine, UART, JTAG
