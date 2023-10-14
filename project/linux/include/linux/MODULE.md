@@ -1,5 +1,10 @@
 
+#### printk.h
 
+* console_loglevel
+* default_message_loglevel
+* minmum_console_loglevel
+* default_console_loglevel
 
 #### linux/list.h
 

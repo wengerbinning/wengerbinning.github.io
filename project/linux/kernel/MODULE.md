@@ -1,4 +1,21 @@
 
+#### printk.o
+
+* LOG_LINE_MAX
+
+* console_printk
+
+* logbuf
+* logbuf_lock
+
+
+
+* log_next
+
+* vprintk_emit
+* vprintk
+* printk_emit
+* printk
 
 #### notifier.o
 

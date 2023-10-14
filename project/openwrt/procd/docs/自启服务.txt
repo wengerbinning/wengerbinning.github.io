@@ -1,0 +1,6 @@
+
+
+
+
+service  boot
+service  running

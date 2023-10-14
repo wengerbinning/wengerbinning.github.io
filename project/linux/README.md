@@ -213,3 +213,12 @@ init(pid=1)进程开始属于内核态进程，然后在运行一个用户态ini
 
 * include/
 * include/uapi/
+
+
+
+* `net`模块
+* `init`模块 用于实现 init
+
+
+
+
