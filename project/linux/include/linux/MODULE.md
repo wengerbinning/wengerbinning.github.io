@@ -6,7 +6,7 @@
 * minmum_console_loglevel
 * default_console_loglevel
 
-#### linux/list.h
+#### list.h
 
 List
 
@@ -59,3 +59,9 @@ Hash List
 #### linux/rtnetlink.h
 
 * ASSERT_RTNL
+
+
+
+#### netdevice.h
+
+* napi_schedule

@@ -48,6 +48,45 @@ config_init_all -> config_init_wireless
 
 
 
+proto_init_interface -> proto_shell_attach
 
 
 
+
+interface_do_reload -> proto_init_interface
+interface_update -> proto_init_interface
+
+
+
+proto_attach_interface
+
+
+interface_proto_event -> proto_shell_handler*
+--------------------------------------------
+
+interface_set_up -> __interface_set_up -> interface_proto_event -> proto_shell_handler
+
+
+
+interface_proto_event
+
+
+
+interface_main_dev_cb -> interface_set_link_state
+
+
+cb_rtnl_event -> device_set_link*
+
+cb_if_check_valid -> device_set_link*
+
+
+
+config_parse_interface -> config_parse_bridge_interface
+
+config_parse_interface -> interface_alloc -> interface_add
+
+interface_start_pending -> interface_set_up
+
+
+interface_set_up -> device_claim
+interface_set_up -> __interface_set_up -> interface_proto_event

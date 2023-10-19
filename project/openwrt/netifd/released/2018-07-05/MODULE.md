@@ -15,8 +15,9 @@
 
 基础接口
 
-* netifd_delete_process
 * netifd_log_message
+
+* netifd_delete_process
 * netifd_process_log_read_cb
 * netifd_process_cb
 * netifd_start_process
@@ -141,8 +142,73 @@
 
 #### interface.o
 
+<!-- data type -->
+* enum interface_attr
+<!-- static object -->
+* interfaces
+* iface_all_users
+* iface_attrs
+* interface_attr_list
+<!-- static function -->
+* set_config_state
+* interfce_event
+* interface_error_flush
+* interface_clear_errors
+* interface_data_del
+* interface_data_flush
+* interface_event
+* interface_flush_state
+* mark_interface_down
+* __interface_set_up
+* interface_check_state
+* interface_set_enabled
+* interface_set_link_state
+* interface_ext_dev_cb
+* interface_main_dev_cb
+* interface_l3_dev_cb
+* interface_add_assignment_classes
+* interface_clear_assignment_classes
+* interface_merge_assignment_data
+* interface_alias_cb
+* interface_set_device_config
+* interface_claim_device
+* interface_cleanup_state
+* interface_cleanup
+* interface_do_free
+* interface_do_reload
+* interface_handle_config_change
+* interface_proto_event_cb
+* __interface_add
+* interface_add_link
+* set_cofnig_state
+* interface_replace_dns
+* interface_device_config_changed
+* interface_change_config
+* interface_update
+* interface_init_list
+<!-- extern function -->
+* interface_add_error
+* interface_add_data
+* interface_parse_data
+* __interface_set_down
+* interface_set_available
+* interface_add_user
+* interface_remove_user
+* interface_set_proto_state
+* interface_alloc
+* interface_set_dynamic
+* interface_add
+* interface_add_alias
+* interface_set_l3_dev
+* interface_set_main_dev
+* interface_remove_link
+* interface_handle_link
+* interface_set_up
+* interface_set_down
+* interface_renew
 * interface_start_pending
-
+* interface_update_start
+* interface_update_complete
 
 #### system-linux.o
 

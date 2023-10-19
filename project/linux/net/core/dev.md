@@ -1,5 +1,20 @@
 
+## 函数调用
 
+netif_receive_skb_core -> __netif_receive_skb_core -> __netif_recevie_skb_core
+
+netif_receive_skb_list -> netif_receive_skb_list_internal -> __netif_receive_skb_list -> __netif_receive_skb_list_core -> __netif_recevie_skb_core
+
+
+__napi_schedule -> ____napi_schedule -> wake_up_process
+
+
+napi_threaded_poll -> __napi_poll
+
+
+napi_gro_receive -> dev_gro_receive -> naip_skb_finish -> gro_normal_one ->  gro_normal_list -> netif_receive_skb_list_internal
+
+## 详细说明
 
 #### __dev_get_by_name
 
@@ -529,3 +544,5 @@ out:
 #### dev_add_pack
 
 添加包处理
+
+

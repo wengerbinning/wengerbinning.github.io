@@ -3,10 +3,6 @@
 
 #### main.o
 
-
-
-
-
 * start_kernel
 * rest_init
 * kernel_init

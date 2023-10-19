@@ -44,6 +44,7 @@
 * cput_nfb
 * softirq_threads
 * spawn_ksoftirqd
+* __raise_softirq_irqoff
 
 
 
