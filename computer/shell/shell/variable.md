@@ -54,7 +54,24 @@ This is a documents about version>
 EOF
 )
 
-echo "$DESCRIPTION" # 加引号会打印多行，如果其中有转移字符，还需要使用 
+echo "$DESCRIPTION" # 加引号会打印多行，如果其中有转移字符，还需要使用
 
 
+```
+
+```shell
+VERSION="1.0"
+```
+
+
+* export
+
+
+```shell
+VERSION="1.0"
+export VERSION
+```
+
+```shell
+export VERSION="1.0"
 ```

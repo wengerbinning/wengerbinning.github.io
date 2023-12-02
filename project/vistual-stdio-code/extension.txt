@@ -1,0 +1,43 @@
+
+* package.json
+
+```json
+// file: package.json
+{
+    "name": "",
+    "displayName": "",
+    "description": "",
+    "version": "",
+    "publisher": "",
+    "license": "",
+    "engines": {},
+    "scripts": {},
+    "contributes": {},
+    "repository": {}
+}
+```
+
+
+
+
+contributes
+===========
+
+```json
+{
+    "languages": [],
+    "grammars": [],
+    "problemPatterns": [],
+    "problemMatchers": [],
+    "snippets": []
+}
+```
+
+Languages
+---------
+
+```json
+{
+
+}
+```

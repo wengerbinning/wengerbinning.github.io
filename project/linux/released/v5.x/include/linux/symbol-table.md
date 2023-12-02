@@ -32,7 +32,7 @@ List
 * list_empty
 * list_empty_careful
 * list_rotate_left
- 
+
 * list_entry
 * list_first_entry
 * list_first_entry_or_null
@@ -50,7 +50,7 @@ Hash List
 * HLIST_HEAD
 * INIT_HLIST_HEAD
 * INIT_HLIST_NODE
- 
+
 
 
 
@@ -65,3 +65,9 @@ Hash List
 #### netdevice.h
 
 * napi_schedule
+
+
+
+
+
+#### module.h

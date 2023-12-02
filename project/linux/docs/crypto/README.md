@@ -51,7 +51,7 @@ COMPRESS
 
 
 
-分块加密模式中的对称加密有CBC、ECB、GCM、CTR、XTS，这个模式使用于所有的加密算法。
+分块加密模式中的对称加密有CBC、ECB、GCM、CTR、XTS，这些模式使用于所有的加密算法。
 
 
 ECC(Elliptic Curve ciphers)
@@ -119,3 +119,24 @@ digestsize   : 16
 
 Linux内核提供一套丰富
 
+
+cipher
+------
+加密(cipher)算法
+
+
+skcipher
+--------
+对称密钥加密(symmetric key cipher)算法
+
+* min_keysize
+* max_keysize
+* ivsize
+* chunksize
+* walksize
+
+* setkey
+* encrypt
+* decrypt
+* init
+* exit

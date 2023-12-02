@@ -1,0 +1,24 @@
+
+IPsec、SSL、TLS、DTLS、3GPP、MACsec等支持协议感知的报文引擎，带Look-Aside接口，加速速率可达5gbps。
+
+专为快速集成，低门计数，完整的L3数据包转换，执行2 Gbps全双工的任何数据包大小。
+
+
+
+
+protocol
+---------
+
+IPsec
+SSL
+TLS
+DTLS
+3GPP
+MACsec
+
+
+
+5Gbps
+
+
+<https://www.rambus.com/security/protocol-engines/protocol-ip-97/>
