@@ -1,12 +1,28 @@
 
-#### printk.h
+#### [printk.h](printk.md)
 
 * console_loglevel
 * default_message_loglevel
 * minmum_console_loglevel
 * default_console_loglevel
 
-#### list.h
+
+* pr_emerg
+* pr_alert
+* pr_crit
+* pr_err
+* pr_warning
+* pr_nitoce
+* pr_info
+
+
+* dump_stack
+
+* print_hex_dump_debug
+
+
+
+#### [list.h](list.md)
 
 List
 
