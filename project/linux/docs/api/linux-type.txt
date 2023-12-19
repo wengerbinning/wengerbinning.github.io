@@ -1,0 +1,49 @@
+inlcude/linux/type.h
+---------------------
+
+bool
+
+
+fd_set
+dev_t
+ino_t
+mode_t
+umode_t
+nlink_t
+off_t
+pid_t
+daddr_t
+key_t
+suseconds_t
+timer_t
+clockid_t
+mqd_t
+
+uid_t
+gid_t
+uid16_t
+gid16_t
+
+loff_t
+
+size_t
+ssize_t
+time_t
+
+
+phys_addr_t
+resource_size_t
+
+
+struct list_head
+struct hlist_head
+
+struct hlist_node
+struct ustat
+
+
+
+include/linux/ioport.h
+----------------------
+
+struct resource

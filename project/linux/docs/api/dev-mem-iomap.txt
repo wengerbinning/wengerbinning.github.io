@@ -1,0 +1,12 @@
+include/linux/io.h
+------------------
+
+devm_ioremap
+devm_ioremap_uc
+devm_ioremap_nocache
+devm_ioremap_wc
+
+devm_ioumap
+
+devm_memremap
+devm_memunmap
