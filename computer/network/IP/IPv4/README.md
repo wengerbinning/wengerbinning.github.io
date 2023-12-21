@@ -40,6 +40,17 @@ E
 
 
 
+## 特性
+
+
+
+#### NAT
+
+Network Address Translation
+
+#### NAPT
+
+Network Address and Port Translation
 
 
 
@@ -61,6 +72,7 @@ E
 
 
 
+## LINKS
 
 * <http://www.subnetmask.info>
 * <<http://www.subnetcalculator.com>

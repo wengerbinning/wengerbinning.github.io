@@ -24,19 +24,23 @@ OpenVPN是基于SSL协议实现的VPN，属于传输层的VPN实现。
 ./easyrsa init-pki
 
 # CA
-./easyrsa build-ca nopass   
+./easyrsa build-ca nopass
 
 # Server
 ./easyrsa build-server-full server nopass
 
 # Client
-./easyrsa build-client-full client nopass   
+./easyrsa build-client-full client nopass
 
 # dh2048.pem
 ./easyrsa gen-dh
 
+openvpn dhparm -out dh2048.pem 2048
+
+
 # ta.key
 
+openvpn -genkey tls-auth tk.key
 
-openvpn --genkey --secret ta.key
+openvpn --genkey --secret secret.key
 ```
