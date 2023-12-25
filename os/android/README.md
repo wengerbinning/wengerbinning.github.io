@@ -11,4 +11,5 @@
 手机的Bootlader类似与电脑的BIOS,属于开机引导程序的一种，通常与硬件相关。
 
 
-## Fastboot
+* Fastboot
+* Recovery

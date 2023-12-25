@@ -1,3 +1,30 @@
+shell中的变量与环境变量可以相互转换
+
+
+通过 export 可以将shell变量导出为环境变量
+通过 declare 可以将环境变量转为shell变量
+
+
+
+#### export
+
+```
+export -f
+export -n 将环境变量转化为shell变量
+export -p
+```
+
+#### declare
+
+declare用于设置shell对象的属性
+
+```
+declare -r 只读
+declare -i 整数类型
+declare
+```
+
+
 shell中的变量
 
 
