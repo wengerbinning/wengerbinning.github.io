@@ -1,19 +1,13 @@
-
-
-
-all:
-
 TOPDIR := ${CURDIR}
 
 
+all:
+
 clean:
-	echo "Clean Project"
-
-
-
+	@echo "Clean Project"
 
 all:
-	echo "Running build"
+	@echo "Running build"
 
 
 
@@ -24,8 +18,6 @@ all:
 # <https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html>
 
 .PHONY: all install clean
-
-
 
 # Double-Colon Rules - explicit rules written with ‘::’ instead of ‘:’ after.
 #  When a target appears in multiple rules, all the rules must be the same type:

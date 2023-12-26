@@ -17,7 +17,7 @@ target : prerequisites
 Here is a catalogue of predefined implicit rules which are always available
 unless the makefile explicitly overrides or cancels them
 
-#### pattern rules
+#### [Pattern Rules](https://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html)
 
 
 #### Implicit Rules
@@ -35,8 +35,8 @@ implicit rule for C compilation.
 
 
 
-* [ Variables Used by Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html)
-
+* [Variables Used by Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html)
+* [Chains of Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Chained-Rules.html)
 
 
 
@@ -49,6 +49,23 @@ configure
 
 
 
+
+
+
+
+
+
+
 make
 
 ```
+
+
+
+## LINKS
+
+
+* [GNU Make](https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents)
+* [GNU M4](https://www.gnu.org/software/m4/m4.html)
+* [Autoconf](https://www.gnu.org/software/autoconf/autoconf.html)
+* [Automake](https://www.gnu.org/software/automake/)
