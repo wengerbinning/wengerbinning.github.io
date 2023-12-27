@@ -1,13 +1,8 @@
 TOPDIR := ${CURDIR}
 
+TMPDIR := $(TOPDIR)/tmp
 
 all:
-
-clean:
-	@echo "Clean Project"
-
-all:
-	@echo "Running build"
 
 
 
@@ -30,3 +25,84 @@ all:
 # <https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html>
 
 %::
+
+
+
+
+
+
+
+# Functions for Transforming Text. #
+#  Functions allow you to do text processing in the makefile to compute the
+#  files to operate on or the commands to use in recipes.
+
+# 1. Function Call Syntax
+#	<https://www.gnu.org/software/make/manual/html_node/Syntax-of-Functions.html>
+
+# 2. Functions for String Substitution and Analysis
+#	<https://www.gnu.org/software/make/manual/html_node/Text-Functions.html>
+
+# $(subst from,to,text)
+# $(patsubst pattern,replacement,text)
+# $(strip string)
+# $(findstring find,in)
+# $(filter pattern…,text)
+# $(filter-out pattern…,text)
+# $(sort list)
+# $(word n,text)
+# $(wordlist s,e,text)
+# $(words text)
+# $(firstword names…)
+# $(lastword names…)
+
+
+# 3. Functions for File Names
+#	<https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html>
+
+# $(dir names…)
+# $(notdir names…)
+# $(suffix names…)
+# $(basename names…)
+# $(addsuffix suffix,names…)
+# $(addprefix prefix,names…)
+# $(join list1,list2)
+# $(wildcard pattern)
+# $(realpath names…)
+# $(abspath names…)
+
+# 4. Functions for Conditionals
+
+# $(if condition,then-part[,else-part])
+# $(or condition1[,condition2[,condition3…]])
+# $(and condition1[,condition2[,condition3…]])
+# $(intcmp lhs,rhs[,lt-part[,eq-part[,gt-part]]])
+
+# 5. The let Function
+
+# ---------------------------------------------------------------------------- #
+
+define Prepare/CreateDir
+	mkdir -p $1
+endef
+
+$(call Prepare/CreateDir, tmp)
+
+clean:
+	@echo "Clean Project"
+	@ rm -rf tmp
+
+all:
+	@echo "Running build"
+
+# ---------------------------------------------------------------------------- #
+
+
+
+
+$(TMPDIR)/table.mk:
+	(echo "module=demo") > $@.tmp
+	mv $@.tmp $@
+
+
+-include $(TMPDIR)/table.mk
+

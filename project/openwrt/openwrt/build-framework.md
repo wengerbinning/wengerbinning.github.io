@@ -170,6 +170,7 @@ rule help:
 
 
 #### inlcude/scan.mk
+
 include $(TOPDIR)/include/verbose.mk
 include $(TOPDIR)/rules.mk
 var TMP_DIR
@@ -178,7 +179,6 @@ var SCAN_TARGET SCAN_NAME SCAN_DIR
 var TARGET_STAMP FILELIST OVERRIDELIST
 rule $(TARGET_STAMP)::
 rule $(TMP_DIR)/.$(SCAN_TARGET): $(TARGET_STAMP)
-
 define PackageDir
 rule $(OVERRIDELIST)
 rule $(FILELIST): $(OVERRIDELIST)
@@ -252,13 +252,12 @@ var CFLAGS
 var ARCH ARCH_PACKAGES BOARD SUBTARGET
 var TARGET_OPTIMIZATION TARGET_SUFFIX
 var BUILD_SUFFIX SUBDIR BUILD_SUBDIR NPROC
-
 define shvar
 define file_copy
 define sha256sums
 define commitcount
-
 rule all:
 rule check:
 rule val.%:
 rule var.%:
+
