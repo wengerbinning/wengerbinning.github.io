@@ -72,7 +72,7 @@ ipsec pki --pub --in key/pri/guest.pem --type rsa --outform pem > key/pub/guest.
 ipsec pki --issue --lifetime 90  \
     --dn "C=CH, O=strongSwan, CN=client.strongswan.ipsec.cn" \
     --san client.strongswan.ipsec.cn \
-    --cacert ca.pem \
+    --cacert ca/ca.pem \
     --cakey key/pri/ca.pem \
     --in key/pub/guest.pem \
     --outform pem > guest.pem
