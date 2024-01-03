@@ -21,7 +21,7 @@ gdb pragram core
 
 * `pc`: 指令寄存器，指向下一条执行的命令，在当前命令加载时更新。
 * `sp`:
-* CS: 
+* CS:
 * SS:
 * BS:
 * EX:
@@ -67,10 +67,26 @@ gdb pragram core
 (gdb) step
 ```
 
+**程序相关**
+
+```gdb
+
+info proc mappings
+```
+
 **寄存器相关**
 
 ```gdb
 # 显示所有寄存器。
+
+info registers
+
+
+```
+
+**堆栈相关**
+
+```gdb
 
 
 ```
@@ -131,7 +147,7 @@ gdb pragram core
 ```gdb
 # 显示当前程序依赖的共享库的加载状态。
 
-(gdb) info sharedlibrary 
+(gdb) info sharedlibrary
 
 # 设置逻辑根目录。(一般在交叉编译时使用)
 
@@ -167,7 +183,7 @@ gdb pragram core
 
 # 将源码路径加入搜索列表。没有source code path参数时恢复默认的搜索列表。
 
-(gdb) directory [<source code path>] 
+(gdb) directory [<source code path>]
 
 # 显示当前源码。
 
@@ -213,3 +229,26 @@ target remote 192.168.3.21：2000
 
 
 size <file path> 打印程序静态大小
+
+
+
+**内存相关**
+
+```gdb
+x $sp
+```
+
+```gdb
+x /x $sp
+```
+
+```gdb
+
+x /bx $sp
+```
+
+
+
+
+
+* <https://visualgdb.com/gdbreference/commands/x>
