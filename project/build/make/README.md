@@ -17,6 +17,12 @@ target : prerequisites
 Here is a catalogue of predefined implicit rules which are always available
 unless the makefile explicitly overrides or cancels them
 
+
+* `.SILENT`
+* `.PHONY`
+* `.NOTPARALLEL`
+
+
 #### [Pattern Rules](https://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html)
 
 

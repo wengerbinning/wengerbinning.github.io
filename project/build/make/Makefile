@@ -81,11 +81,8 @@ all:
 
 # ---------------------------------------------------------------------------- #
 
-define Prepare/CreateDir
-	mkdir -p $1
-endef
 
-$(call Prepare/CreateDir, tmp)
+
 
 clean:
 	@echo "Clean Project"
@@ -94,6 +91,12 @@ clean:
 all:
 	@echo "Running build"
 
+
+define Prepare/CreateDir
+	mkdir -p $1
+endef
+
+#$(eval $(call Prepare/CreateDir, tmp))
 # ---------------------------------------------------------------------------- #
 
 
@@ -105,4 +108,11 @@ $(TMPDIR)/table.mk:
 
 
 -include $(TMPDIR)/table.mk
+
+DEBUG=1
+
+ifneq ($(DEBUG),)
+    info:
+		echo "info"
+endif
 
