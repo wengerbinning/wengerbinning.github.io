@@ -51,6 +51,9 @@ uboot
 
 ## LINKS
 
+* <https://docs.u-boot.org/en/latest/#>
+* <https://lists.denx.de/listinfo/u-boot>
+
 * <https://chromium.googlesource.com/external/github.com/ARM-software/arm-trusted-firmware/+/v0.4-rc1/docs/firmware-design.md>
 * <https://ohwr.org/project/soc-course/wikis/ARM-Trusted-Firmware-(ATF)>
 * <https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842107/Arm+Trusted+Firmware>
