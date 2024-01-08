@@ -252,3 +252,4 @@ x /bx $sp
 
 
 * <https://visualgdb.com/gdbreference/commands/x>
+* <https://sourceware.org/gdb/current/onlinedocs/gdb.html/>
