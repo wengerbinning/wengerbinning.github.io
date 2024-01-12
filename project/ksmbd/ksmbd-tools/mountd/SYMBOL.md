@@ -31,8 +31,34 @@
 
 #### ipc.o
 
+* ipc_ksmbd_starting_up
+* ipc_ksmbd_shutting_down
+* ipc_process_event
+* ksmbd_nl_policy
+* ksmbd_genl_cmds
+* ksmbd_family_ops
+* ipc_msg_send
+* ipc_init
+* ipc_destroy
+
 
 #### rpc.o
+
+*
+* dcerpc_write_headers
+* dcerpc_bind_req_free
+* dcerpc_parse_bind_req
+* dcerpc_bind_invoke
+* dcerpc_syntax_cmp
+* dcerpc_bind_nack_return
+* dcerpc_bin_ack_return
+* dcerpc_bind_return
+* rpc_restricted_context
+* rpc_ioctl_request
+* rpc_read_request
+* rpc_write_request
+* rpc_open_request
+* rpc_close_request
 
 #### rpc_lsarpc.o
 
