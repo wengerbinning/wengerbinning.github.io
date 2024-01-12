@@ -1,5 +1,5 @@
-PPTP(Point-to-Point Tunneling Protocol)点对点隧道协议是PPP协议的⼀种扩展.它将PPP（Point-to-Point
-Protocol）帧封装进IP包
+PPTP(Point-to-Point Tunneling Protocol)点对点隧道协议是PPP协议的⼀种扩展.它将
+PPP(Point-to-Point Protocol)帧封装进IP包
 
 service/client
 
@@ -9,3 +9,12 @@ service/client
 
 pppd
 accel-pptp-0.8.5
+
+
+
+
+RFC 263
+
+
+TCP:1723
+

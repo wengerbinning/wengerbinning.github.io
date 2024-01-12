@@ -1,0 +1,23 @@
+
+
+## IEEE 802.11
+
+* IEEE 802.11 - legacy(WiFi0)
+* IEEE 802.11b - WiFi1
+* IEEE 802.11a - WiFi2
+* IEEE 802.11g - WiFi3
+* IEEE 802.11n - WiFi4
+* IEEE 802.11ac - WiFi5
+* IEEE 802.11ax - WiFi6/WiFi6E
+* IEEE 802.11be - WiFi7
+
+#### IEEE 802.11-1997
+#### IEEE 802.11-1999
+#### IEEE 802.11b-1999
+#### IEEE 802.11a-1999
+#### IEEE 802.11g-2003
+#### IEEE 802.11n-2009
+#### IEEE 802.11ac-2013
+#### IEEE 802.11ax-2019
+#### IEEE 802.11ax-2020
+#### IEEE 802.11be-2024
