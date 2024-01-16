@@ -57,7 +57,7 @@ all:
 
 
 # 3. Functions for File Names
-#	<https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html>
+#	<s>
 
 # $(dir names…)
 # $(notdir names…)
