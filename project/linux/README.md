@@ -84,7 +84,7 @@ Linux kernel
 GNU/Linux Distribution
 ======================
 
-基于Linux的发行版本有Debian、Ubuntu、CentOS、Red hat、Gentoo、OpenSUSE、Fedora、Arch 
+基于Linux的发行版本有Debian、Ubuntu、CentOS、Red hat、Gentoo、OpenSUSE、Fedora、Arch
 Linux、Deepin、Fedora、Gentoo、等。
 
 
@@ -96,6 +96,10 @@ Software Tools
 coreutiils
 
 **File System**
+
+
+initrd(initial RAM disk)
+initramfs(initial RAM File System)
 
 
 
@@ -187,7 +191,7 @@ inlcude是linux内核的头文件
 idle(pid=0)进程是系统的第一个进程，由系统创建，运行在内核态，优先级最低。
 
 init(pid=1)进程开始属于内核态进程，然后在运行一个用户态init进程（一般为init、systemd或者procd，该进程必须在挂载根文件系统之后才能被运行）后转化为用户态进程。
-在用户态的init进程之前是init,后来被systemed代替，在openwrt中由procd替代。init是system V的init, 
+在用户态的init进程之前是init,后来被systemed代替，在openwrt中由procd替代。init是system V的init,
 
 
 
@@ -209,7 +213,7 @@ init(pid=1)进程开始属于内核态进程，然后在运行一个用户态ini
 
 * arch/${ARCH}/include/asm/
 * arch/${ARCH}/include/uapi/asm/
-* 
+*
 
 * include/
 * include/uapi/

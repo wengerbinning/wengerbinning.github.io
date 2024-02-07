@@ -1,4 +1,7 @@
 
+* cgit
+* fcgiwrap
+
 CGit + fcgiwrap
 
 
@@ -83,4 +86,12 @@ virtual-root=/
 
 
 scan-path=/vcs/git
+```
+
+
+
+
+
+```
+sudo systemctl start {fcgiwrap.service, fcgiwrap.socket, nginx}
 ```
