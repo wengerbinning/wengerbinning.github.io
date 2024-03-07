@@ -1,0 +1,21 @@
+
+
+MediaTek MT7988A (Filogic 880) quad-core Arm Corex-A73,1.8GHz processor
+4GB DDR4
+8GB eMMC flash
+128MB SPI-NAND Flash
+Micro SD card slot
+2x 10Gbe SFP slot
+4x Gbe network port
+1x USB3.2 slot
+1x M.2 KEY-B slot with USB3.2 interface for 5G
+1x M.2 KEY-M slot with PCIe3.0 1lane interface for NVME SSD
+2x miniPCIe slots with PCIe3.0 2lane interface for Wi-Fi 7 NIC (Network Interface Card)
+26 PIN GPIO Header for expanding application
+
+
+
+
+## LINKS
+
+* <https://www.banana-pi.org/en/bananapi-router/155.html>

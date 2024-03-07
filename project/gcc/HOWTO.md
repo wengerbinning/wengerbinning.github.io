@@ -1,0 +1,90 @@
+
+
+
+* 第一阶段
+
+```shell
+#!/usr/bin/env bash
+
+#
+TOOLCHAIN_DIR=
+
+BUILD_DIR="build"
+SOURCE_DIR=$(pwd)
+
+#
+PATH="${TOOLCHAIN_DIR}/bin${PATH:+:$PATH}"
+export PATH
+
+#
+test -d $BUILD_DIR && rm -rf $BUILD_DIR
+mkdir $BUILD_DIR
+
+#
+cd $BUILD_DIR && {
+    #
+    $SOURCE_DIR/configure --prefix=${TOOLCHAIN_DIR} \
+        --target=aarch64-unknown-linux \
+        --with-sysyroot=${TOOLCHAIN_DIR} \
+        --enable-languages=c \
+        --disable-multilib
+
+# --disable-threads
+# --disable-decimal-float
+# --with-newlib
+# --disable-shared
+# --disable-nls
+# --disable-libmudflap
+# --disable-libssp
+# --with-headers=$TARGET_PREFIX/include
+
+    #
+    make -j4 all-gcc all-target-libgcc
+
+    #
+    make -j4 install-gcc install-target-libgcc
+
+    #
+    cd - >/dev/null
+}
+```
+
+
+* 第二阶段
+
+
+
+
+```shell
+#!/usr/bin/env bash
+
+#
+TOOLCHAIN_DIR=
+
+BUILD_DIR="build"
+SOURCE_DIR=$(pwd)
+
+#
+test -d $BUILD_DIR && rm -rf $BUILD_DIR
+mkdir $BUILD_DIR
+
+#
+cd $BUILD_DIR && {
+    #
+    $SOURCE_DIR/configure --prefix=${TOOLCHAIN_DIR} \
+        --target=aarch64-unknown-linux \
+        --with-sysyroot=${TOOLCHAIN_DIR} \
+        --enable-languages=c \
+        --disable-multilib
+
+    #
+    make -j4 all-gcc
+
+    #
+    make -j4 install-gcc
+
+    #
+    cd - >/dev/null
+}
+```
+
