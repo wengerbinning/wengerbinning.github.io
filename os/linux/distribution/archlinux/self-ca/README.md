@@ -51,7 +51,7 @@ easyrsa build-client-full client
 ## 证书检查
 
 ```shell
-openssl x509 -in *.cert -text
+openssl x509 -in *.crt -text
 ```
 
 
