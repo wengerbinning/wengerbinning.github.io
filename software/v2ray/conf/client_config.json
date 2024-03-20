@@ -1,0 +1,149 @@
+{
+	"log": {
+		"loglevel": "warning"
+	},
+
+	"inbounds": [
+		{
+			"tag": "http-inbound",
+			"listen": "0.0.0.0",
+			"port": 6010,
+			"protocol": "http",
+			"settings": {
+				"timeout": 300,
+				"accounts": [],
+				"allowTransparent": false,
+				"userLevel": 0
+			},
+      		"streamSettings": {}
+    	},
+    	{
+			"tag": "socks-inbound",
+			"listen": "0.0.0.0",
+			"port": 6011,
+			"protocol": "socks",
+			"settings": {
+				"auth": "noauth",
+				"accounts": [],
+				"udp": false,
+				"ip": "127.0.0.1",
+				"userLevel": 0
+			},
+			"streamSettings": {}
+		}
+  	],
+
+	"outbounds": [
+		{
+			"tag": "freedom-outbound",
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"tag": "vmess-outbound",
+			"protocol": "vmess",
+			"settings": {
+				"vnext": [
+					{
+						"address": "singapore.huawei.cloud.wengerbinning.xyz",
+						"port": 443,
+						"users": [
+							{
+								"id": "acbee383-cbeb-d947-c96a-86b807a02e26",
+								"alterId": 0,
+								"secirity": "auto",
+								"level": 0
+							}
+						]
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "tls",
+				"wsSettings": {
+					"acceptProtocol": false,
+					"path": "/vpn/v2ray/vmess",
+					"headers": {
+						"Host": "singapore.huawei.cloud.wengerbinning.xyz"
+					}
+				}
+			}
+		},
+		{
+			"tag": "vless-outbound",
+			"protocol": "vless",
+			"settings": {
+				"vnext": [{
+					"address": "singapore.huawei.cloud.wengerbinning.xyz",
+					"port": 443,
+					"users": [{
+						"id": "acbee383-cbeb-d947-c96a-86b807a02e26",
+						"encryption": "none",
+						"level": 0
+					}]
+				}]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "tls",
+				"wsSettings": {
+				"acceptProtocol": false,
+				"path": "/vpn/v2ray/vless",
+				"headers": {
+					"Host": "singapore.huawei.cloud.wengerbinning.xyz"
+				}
+				}
+			}
+		},
+		{
+			"tag": "blackhole-outbound",
+			"protocol": "blackhole",
+			"settings": {
+				"response": {
+					"type": "http"
+				}
+			}
+		}
+  	],
+
+	"routing": {
+		"domainStrategy": "IPIfNonMatch",
+		"domainMatcher": "mph",
+		"rules": [
+			{
+				"type": "field",
+				"domains": [
+					"geosite:category-ads-all"
+				],
+				"outboundTag": "blackhole-outbound"
+			},
+			{
+				"type": "field",
+				"domains": [
+					"wireshark.org",
+					"wengerbinning.xyz",
+					"geosite:cn"
+				],
+				"outboundTag": "freedom-outbound"
+			},
+			{
+				"type": "field",
+				"ip": [
+					"192.168.0.0/16",
+					"172.16.0.0/16",
+					"10.0.0.0/8"
+				],
+				"outboundTag": "freedom-outbound"
+			},
+			{
+				"type": "field",
+				"domains": [
+					"github.com",
+					"geosite:geolocation-!cn"
+				],
+				"outboundTag": "vless-outbound"
+			}
+		]
+	}
+}
