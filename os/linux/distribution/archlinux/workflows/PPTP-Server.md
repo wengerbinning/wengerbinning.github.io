@@ -3,6 +3,7 @@
 
 
 
+* pptpd 
 
 
 
@@ -11,8 +12,7 @@
 
 
 
-
-
+The remote system is required to authenticate itself but I couldn't find any suitable secret (password) for it to use to do so.
 
 
 
@@ -21,8 +21,8 @@
 * `/etc/pptpd.conf`
 
 ```
-localip 10.0.0.1
-remoteip 10.0.0.100-200
+localip 192.168.10.1
+remoteip 192.168.10.200-254
 ```
 
 
