@@ -92,6 +92,10 @@ CCP
 
 
 
+#### MPPE(Microsoft Point-to-Point Encryption)
+
+MPPE提供对PPP或PPTP网络提供数据加密服务。
+MPPE支持40bit、56bit、128bit密钥；
 
 
 

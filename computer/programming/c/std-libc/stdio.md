@@ -1,37 +1,73 @@
 
 
+## 宏变量
+
+* SEEK_SET
+* SEEK_CUR
+* SEEK_END
+
+* BUFSIZ
+* FILENAME_MAX
+* FOPEN_MAX
+* TMP_MAX
 
 
+## 数据对象
+
+* stdin - FILE *
+* stdout - FILE *
+* stderr - FILE *
 
 
+## 函数接口
 
-#### fopen
+* fopen
+* freopen
+* fclose
+* remove
 
-```c
-extern FILE *fopen (const char *__restrict __filename,const char *__restrict __modes);
-```
+* rename
+* feof
+* ferror
+* fflush
+* clearerr
+* fseek
+* ftell
+* rewind
+* fgetpos
+* fsetpos
 
+* fread
+* fwrite
+* fgetc
+* fputc
+* getc
+* putc
+* getchar
+* putchar
+* ungetc
+* fgets
+* fputs
+* gets
+* puts
 
-#### fflush
+* printf
+* scanf
+* fprintf
+* fscanf
+* sprintf
+* sscanf
+* snprintf
+* vprintf
+* vscanf
+* vfprintf
+* vfscanf
+* vsprintf
+* vsnprintf
+* vsscanf
 
-```c
-extern int fflush (FILE *__stream);
-```
-
-####
-
-```c
-extern size_t fread (void *__restrict __ptr, size_t __size, size_t __n, FILE *__restrict __stream)
-```
-
-#### 
-
-```c
-extern int fgetc (FILE *__stream);
-
-extern int getc (FILE *__stream);
-
-extern int fputc (int __c, FILE *__stream);
-extern int putc (int __c, FILE *__stream);
-
-```
+* perror
+* setvbuf
+* setbuf
+* tmpnam
+* tmpfile
