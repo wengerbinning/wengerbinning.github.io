@@ -1,0 +1,19 @@
+L2TP(Layer 2 Tunneling Protocol)
+LNS(L2TP Network Server)
+LAC(L2TP Access Concentrator)
+
+
+Server
+
+```
+/usr/bin/xl2tpd -D
+```
+
+
+
+
+
+Protocol Port
+-------------
+
+UDP:1701

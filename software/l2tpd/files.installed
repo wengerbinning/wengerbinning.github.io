@@ -1,0 +1,8 @@
+etc/ppp/options.l2tpd
+etc/xl2tpd/xl2tpd.conf.client-example
+etc/xl2tpd/xl2tpd.conf.server-example
+usr/bin/pfc
+usr/bin/xl2tpd
+usr/bin/xl2tpd-control
+usr/lib/systemd/system/xl2tpd.service
+usr/lib/tmpfiles.d/xl2tpd.conf

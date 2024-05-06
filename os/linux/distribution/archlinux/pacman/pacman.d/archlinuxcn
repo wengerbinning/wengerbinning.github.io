@@ -1,0 +1,10 @@
+##
+## Arch Linux China repository
+## Generated on 2024-01-31
+##
+
+Server = https://repo.archlinuxcn.org/$arch
+Server = https://mirrors.zju.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+
+

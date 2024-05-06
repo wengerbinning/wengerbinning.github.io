@@ -1,0 +1,17 @@
+##
+## Arch Linux repository Archive
+## Generated on 2024-03-31
+## repository table: 
+##   testing, community-testing, multilib-testing
+##   core, extra, community, multilib
+##   staging, community-staging, multilib-staging
+##   gnome-unstable, kde-unstable
+##   sources
+##
+
+Server = https://archive.archlinux.org/repos/2024/03/31/$repo/os/$arch
+Server = https://asia.archive.pkgbuild.com/repos/2024/03/31/$repo/os/$arch
+Server = https://europe.archive.pkgbuild.com/repos/2024/03/31/$repo/os/$arch
+Server = https://america.archive.pkgbuild.com/repos/2024/03/31/$repo/os/$arch
+
+Server = https://archlinux.wengerbinning.xyz/$repo/os/$arch

@@ -1,0 +1,15 @@
+[global]
+access control = no
+auth file = /etc/ppp/chap-secrets
+debug avp = yes
+debug network = yes
+debug packet = yes
+debug state = yes
+debug tunnel = yes
+
+[lns default]
+ppp debug = yes
+pppoptfile = /etc/ppp/options.l2tpd
+assign ip = yes
+ip range = 192.168.12.200-192.168.12.250
+local ip = 192.168.12.1

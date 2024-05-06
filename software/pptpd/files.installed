@@ -1,0 +1,9 @@
+etc/pptpd.conf
+usr/bin/bcrelay
+usr/bin/pptpctrl
+usr/bin/pptpd
+usr/lib/pptpd/pptpd-logwtmp.so
+usr/lib/systemd/system/pptpd.service
+usr/share/doc/pptpd/samples/chap-secrets
+usr/share/doc/pptpd/samples/options.pptpd
+usr/share/doc/pptpd/samples/pptpd.conf

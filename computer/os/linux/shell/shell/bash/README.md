@@ -1,7 +1,12 @@
 
 
 
+```shell
+echo -e "!ls"   # 这是一个shell特性：histexpand， !作为标识，后紧跟一个命令，会被替换为最近执行这条命令。
 
+# 该特性支持 sh, zsh, bash, ksh
+# <https://linuxcommandlibrary.com/man/histexpand>
+```
 
 
 
