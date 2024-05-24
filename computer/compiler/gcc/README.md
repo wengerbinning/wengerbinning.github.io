@@ -20,7 +20,7 @@
 
 默认使用的是当前路径,当前路径找不到时，使用工具链环境。
 
-### 库文件
+## Libraries
 
 * 通过gcc的-L参数指定的路径
 * 环境变量: LD_LIBRARY_PATH
@@ -29,10 +29,14 @@
 
 
 
-#### Build Linking
+### Build Linking
 
 LIBRARY_PATH
 
-#### Runtime
+### Runtime Linking
 
 LD_LIBRARY_PATH
+
+
+
+
