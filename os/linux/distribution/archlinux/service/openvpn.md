@@ -12,6 +12,8 @@ openvpn dhparm -out dh2048.pem 2048
 openvpn -genkey tls-auth ta.key
 
 openvpn --genkey --secret secret.key
+
+openvpn --genkey --secret secret.key
 ```
 
 ```shell
