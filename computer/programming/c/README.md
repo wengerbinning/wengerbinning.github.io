@@ -1,8 +1,11 @@
 
+* [C](c/README.md)
+* [C标准](std-c/README.md)
 
-* [项目列表](module.md)
-
-## 标准C库
+* [C库标准](std-libc/README.md)
+* [标准C库 - glibc](glibc/README.md)
+* [标准C库 - musl](musl/README.md)
+* [标准C库 - uClibc](uclibc/README.md)
 
 ## OprnWrt
 
