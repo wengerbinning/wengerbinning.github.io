@@ -1,8 +1,8 @@
-版权(copyright)是一种知识产权， 通常在有限的时间内， 赋予其所有者复制、分发、修改、展示与进一步创造性工作的专有权。
+版权(copyright)是一种知识产权， 通常在有限的时间内， 赋予其所有者复制、分发、修改、展示
+与进一步创造性工作的专有权。
 
-
-创造性的工作可以是文学、艺术、教育或音乐形式。版权旨在保护创意作品中对思想的原始表达，而不保护思想本身。版权受到基于公共利益考虑的限制，例如美国的合理使用原则。
-
+创造性的工作可以是文学、艺术、教育或音乐形式。版权旨在保护创意作品中对思想的原始表达，而
+不保护思想本身。版权受到基于公共利益考虑的限制，例如美国的合理使用原则。
 
 权力：
 
@@ -11,8 +11,6 @@
 * 展示权
 * 复制权
 * 发行权
-
-
 
 许可(License)
 
@@ -24,24 +22,21 @@
 * copyright license
 * software license
 
-
 ### 软件许可
-
 
 * 专有软件许可(Proprietary software licenses)
 * 开源软件许可(Open source software license)
 
-免费和开源许可证通常分为两类：旨在对如何重新分发软件提出最低要求的许可证（宽松许可证），以及保护
-性共享许可证（copyleft 许可证）。
+免费和开源许可证通常分为两类：旨在对如何重新分发软件提出最低要求的许可证（宽松许可证）以
+及保护性共享许可证（copyleft 许可证）。
 
-* 宽松的软件许可(Permissive software license)
+宽松的软件许可(Permissive software license)
 
-    BSD
+* BSD
 
-* 保护性软将许可(copyleft software licenses)
+保护性软将许可(copyleft software licenses)
 
-    GPL
-
+* GPL
 
 ## 许可协议
 

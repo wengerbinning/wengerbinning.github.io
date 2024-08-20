@@ -1,0 +1,22 @@
+
+mtd2: 00500000 00020000 "kernel"
+mtd3: 02300000 00020000 "rootfs"
+mtd4: 00500000 00020000 "kernel_slave"
+mtd5: 02300000 00020000 "rootfs_slave"
+
+mtd2: 00500000 00020000 "kernel"        5MiB
+mtd3: 02300000 00020000 "rootfs"       35MiB
+mtd4: 00500000 00020000 "kernel_slave"
+mtd5: 02300000 00020000 "rootfs_slave"
+
+
+
+
+
+
+GWN7002/GWN7003:
+
+mtd2     5MiB   kernel
+mtd3    35MiB   rootfs
+mtd4     5MiB   kernel_slave
+mtd5    35MiB   rootfs_slave
