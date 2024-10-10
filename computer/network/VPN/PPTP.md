@@ -2,7 +2,7 @@ PPTP(Point-to-Point Tunneling Protocol)点对点隧道协议是PPP协议的⼀�
 PPP(Point-to-Point Protocol)帧封装进IP包
 
 service/client
-
+TCP/1723 & GRE/PPP
 
 PPTP uses a TCP control channel and a Generic Routing Encapsulation tunnel to encapsulate PPP packets.
 
@@ -18,7 +18,7 @@ pppd
 accel-pptp-0.8.5
 
 RFC 263
-TCP:1723
+
 
 #### MPPE(Microsoft Point-to-Point Encryption)
 
