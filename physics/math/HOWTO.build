@@ -1,0 +1,305 @@
+
+
+archlinux
+=========
+
+local/texlive-basic (texlive)
+local/texlive-bin
+local/texlive-binextra
+local/texlive-doc
+local/texlive-latex (texlive)
+local/texlive-xmltex  (texlive)
+
+
+texlive-basic /usr/bin/fmtutil
+texlive-basic /usr/bin/fmtutil-sys
+texlive-basic /usr/bin/fmtutil-user
+texlive-basic /usr/bin/mktexfmt
+texlive-basic /usr/bin/mktexlsr
+texlive-basic /usr/bin/mktexmf
+texlive-basic /usr/bin/mktexpk
+texlive-basic /usr/bin/mktextfm
+texlive-basic /usr/bin/rungs
+texlive-basic /usr/bin/simpdftex
+texlive-basic /usr/bin/texhash
+texlive-basic /usr/bin/tlmgr
+texlive-basic /usr/bin/tlshell
+texlive-basic /usr/bin/updmap
+texlive-basic /usr/bin/updmap-sys
+texlive-basic /usr/bin/updmap-user
+
+texlive-bin /usr/bin/afm2pl
+texlive-bin /usr/bin/afm2tfm
+texlive-bin /usr/bin/aleph
+texlive-bin /usr/bin/amstex
+texlive-bin /usr/bin/autosp
+texlive-bin /usr/bin/axohelp
+texlive-bin /usr/bin/bbox
+texlive-bin /usr/bin/bg5+latex
+texlive-bin /usr/bin/bg5+pdflatex
+texlive-bin /usr/bin/bg5conv
+texlive-bin /usr/bin/bg5latex
+texlive-bin /usr/bin/bg5pdflatex
+texlive-bin /usr/bin/bibtex
+texlive-bin /usr/bin/bibtex8
+texlive-bin /usr/bin/cef5conv
+texlive-bin /usr/bin/cef5latex
+texlive-bin /usr/bin/cef5pdflatex
+texlive-bin /usr/bin/cefconv
+texlive-bin /usr/bin/ceflatex
+texlive-bin /usr/bin/cefpdflatex
+texlive-bin /usr/bin/cefsconv
+texlive-bin /usr/bin/cefslatex
+texlive-bin /usr/bin/cefspdflatex
+texlive-bin /usr/bin/cfftot1
+texlive-bin /usr/bin/chkdvifont
+texlive-bin /usr/bin/chktex
+texlive-bin /usr/bin/csplain
+texlive-bin /usr/bin/ctangle
+texlive-bin /usr/bin/ctie
+texlive-bin /usr/bin/ctwill
+texlive-bin /usr/bin/ctwill-proofsort
+texlive-bin /usr/bin/ctwill-refsort
+texlive-bin /usr/bin/ctwill-twinx
+texlive-bin /usr/bin/cweave
+texlive-bin /usr/bin/detex
+texlive-bin /usr/bin/devnag
+texlive-bin /usr/bin/disdvi
+texlive-bin /usr/bin/dt2dv
+texlive-bin /usr/bin/dv2dt
+texlive-bin /usr/bin/dvi2tty
+texlive-bin /usr/bin/dvibook
+texlive-bin /usr/bin/dviconcat
+texlive-bin /usr/bin/dvicopy
+texlive-bin /usr/bin/dvidvi
+texlive-bin /usr/bin/dvigif
+texlive-bin /usr/bin/dvihp
+texlive-bin /usr/bin/dvilj
+texlive-bin /usr/bin/dvilj2p
+texlive-bin /usr/bin/dvilj4
+texlive-bin /usr/bin/dvilj4l
+texlive-bin /usr/bin/dvilj6
+texlive-bin /usr/bin/dvilualatex
+texlive-bin /usr/bin/dvilualatex-dev
+texlive-bin /usr/bin/dviluatex
+texlive-bin /usr/bin/dvipdfm
+texlive-bin /usr/bin/dvipdfmx
+texlive-bin /usr/bin/dvipdft
+texlive-bin /usr/bin/dvipng
+texlive-bin /usr/bin/dvipos
+texlive-bin /usr/bin/dvips
+texlive-bin /usr/bin/dviselect
+texlive-bin /usr/bin/dvispc
+texlive-bin /usr/bin/dvitodvi
+texlive-bin /usr/bin/dvitomp
+texlive-bin /usr/bin/dvitype
+texlive-bin /usr/bin/ebb
+texlive-bin /usr/bin/eplain
+texlive-bin /usr/bin/eptex
+texlive-bin /usr/bin/etex
+texlive-bin /usr/bin/euptex
+texlive-bin /usr/bin/extconv
+texlive-bin /usr/bin/extractbb
+texlive-bin /usr/bin/gbklatex
+texlive-bin /usr/bin/gbkpdflatex
+texlive-bin /usr/bin/gftodvi
+texlive-bin /usr/bin/gftopk
+texlive-bin /usr/bin/gftype
+texlive-bin /usr/bin/gregorio
+texlive-bin /usr/bin/gsftopk
+texlive-bin /usr/bin/hbf2gf
+texlive-bin /usr/bin/hilatex
+texlive-bin /usr/bin/hishrink
+texlive-bin /usr/bin/histretch
+texlive-bin /usr/bin/hitex
+texlive-bin /usr/bin/inimf
+texlive-bin /usr/bin/initex
+texlive-bin /usr/bin/jadetex
+texlive-bin /usr/bin/kpseaccess
+texlive-bin /usr/bin/kpsereadlink
+texlive-bin /usr/bin/kpsestat
+texlive-bin /usr/bin/kpsewhich
+texlive-bin /usr/bin/lacheck
+texlive-bin /usr/bin/latex
+texlive-bin /usr/bin/latex-dev
+texlive-bin /usr/bin/lollipop
+texlive-bin /usr/bin/luacsplain
+texlive-bin /usr/bin/luahbtex
+texlive-bin /usr/bin/luajithbtex
+texlive-bin /usr/bin/luajittex
+texlive-bin /usr/bin/lualatex
+texlive-bin /usr/bin/lualatex-dev
+texlive-bin /usr/bin/luatex
+texlive-bin /usr/bin/mag
+texlive-bin /usr/bin/makeindex
+texlive-bin /usr/bin/makejvf
+texlive-bin /usr/bin/mendex
+texlive-bin /usr/bin/mex
+texlive-bin /usr/bin/mf
+texlive-bin /usr/bin/mf-nowin
+texlive-bin /usr/bin/mflua
+texlive-bin /usr/bin/mflua-nowin
+texlive-bin /usr/bin/mfluajit
+texlive-bin /usr/bin/mfluajit-nowin
+texlive-bin /usr/bin/mfplain
+texlive-bin /usr/bin/mft
+texlive-bin /usr/bin/mkindex
+texlive-bin /usr/bin/mkocp
+texlive-bin /usr/bin/mkofm
+texlive-bin /usr/bin/mllatex
+texlive-bin /usr/bin/mltex
+texlive-bin /usr/bin/mmafm
+texlive-bin /usr/bin/mmpfb
+texlive-bin /usr/bin/mpost
+texlive-bin /usr/bin/msxlint
+texlive-bin /usr/bin/odvicopy
+texlive-bin /usr/bin/odvitype
+texlive-bin /usr/bin/ofm2opl
+texlive-bin /usr/bin/omfonts
+texlive-bin /usr/bin/opl2ofm
+texlive-bin /usr/bin/optex
+texlive-bin /usr/bin/otangle
+texlive-bin /usr/bin/otfinfo
+texlive-bin /usr/bin/otftotfm
+texlive-bin /usr/bin/otp2ocp
+texlive-bin /usr/bin/outocp
+texlive-bin /usr/bin/ovf2ovp
+texlive-bin /usr/bin/ovp2ovf
+texlive-bin /usr/bin/patgen
+texlive-bin /usr/bin/pbibtex
+texlive-bin /usr/bin/pdfclose
+texlive-bin /usr/bin/pdfcsplain
+texlive-bin /usr/bin/pdfetex
+texlive-bin /usr/bin/pdfjadetex
+texlive-bin /usr/bin/pdflatex
+texlive-bin /usr/bin/pdflatex-dev
+texlive-bin /usr/bin/pdfmex
+texlive-bin /usr/bin/pdfopen
+texlive-bin /usr/bin/pdftex
+texlive-bin /usr/bin/pdftosrc
+texlive-bin /usr/bin/pdfxmltex
+texlive-bin /usr/bin/pdvitomp
+texlive-bin /usr/bin/pdvitype
+texlive-bin /usr/bin/pfb2pfa
+texlive-bin /usr/bin/pk2bm
+texlive-bin /usr/bin/pktogf
+texlive-bin /usr/bin/pktype
+texlive-bin /usr/bin/platex
+texlive-bin /usr/bin/platex-dev
+texlive-bin /usr/bin/pltotf
+texlive-bin /usr/bin/pmpost
+texlive-bin /usr/bin/pmxab
+texlive-bin /usr/bin/pooltype
+texlive-bin /usr/bin/ppltotf
+texlive-bin /usr/bin/prepmx
+texlive-bin /usr/bin/ps2pk
+texlive-bin /usr/bin/ptekf
+texlive-bin /usr/bin/ptex
+texlive-bin /usr/bin/ptftopl
+texlive-bin /usr/bin/r-mpost
+texlive-bin /usr/bin/r-pmpost
+texlive-bin /usr/bin/r-upmpost
+texlive-bin /usr/bin/scor2prt
+texlive-bin /usr/bin/sjisconv
+texlive-bin /usr/bin/sjislatex
+texlive-bin /usr/bin/sjispdflatex
+texlive-bin /usr/bin/synctex
+texlive-bin /usr/bin/t1dotlessj
+texlive-bin /usr/bin/t1lint
+texlive-bin /usr/bin/t1rawafm
+texlive-bin /usr/bin/t1reencode
+texlive-bin /usr/bin/t1testpage
+texlive-bin /usr/bin/t4ht
+texlive-bin /usr/bin/tangle
+texlive-bin /usr/bin/teckit_compile
+texlive-bin /usr/bin/tex
+texlive-bin /usr/bin/tex2aspc
+texlive-bin /usr/bin/tex2xindy
+texlive-bin /usr/bin/tex4ht
+texlive-bin /usr/bin/texlua
+texlive-bin /usr/bin/texluac
+texlive-bin /usr/bin/texluajit
+texlive-bin /usr/bin/texluajitc
+texlive-bin /usr/bin/texsis
+texlive-bin /usr/bin/tftopl
+texlive-bin /usr/bin/tie
+texlive-bin /usr/bin/tpic2pdftex
+texlive-bin /usr/bin/ttf2afm
+texlive-bin /usr/bin/ttf2pk
+texlive-bin /usr/bin/ttf2tfm
+texlive-bin /usr/bin/ttfdump
+texlive-bin /usr/bin/ttftotype42
+texlive-bin /usr/bin/twill
+texlive-bin /usr/bin/twill-refsort
+texlive-bin /usr/bin/upbibtex
+texlive-bin /usr/bin/updvitomp
+texlive-bin /usr/bin/updvitype
+texlive-bin /usr/bin/uplatex
+texlive-bin /usr/bin/uplatex-dev
+texlive-bin /usr/bin/upmendex
+texlive-bin /usr/bin/upmpost
+texlive-bin /usr/bin/uppltotf
+texlive-bin /usr/bin/uptex
+texlive-bin /usr/bin/uptftopl
+texlive-bin /usr/bin/utf8mex
+texlive-bin /usr/bin/vftovp
+texlive-bin /usr/bin/vlna
+texlive-bin /usr/bin/vptovf
+texlive-bin /usr/bin/weave
+texlive-bin /usr/bin/wofm2opl
+texlive-bin /usr/bin/wopl2ofm
+texlive-bin /usr/bin/wovf2ovp
+texlive-bin /usr/bin/wovp2ovf
+texlive-bin /usr/bin/xdvi
+texlive-bin /usr/bin/xdvi-xaw
+texlive-bin /usr/bin/xdvipdfmx
+texlive-bin /usr/bin/xelatex
+texlive-bin /usr/bin/xelatex-dev
+texlive-bin /usr/bin/xetex
+texlive-bin /usr/bin/xindy.mem
+texlive-bin /usr/bin/xindy.run
+texlive-bin /usr/bin/xml2pmx
+texlive-bin /usr/bin/xmltex
+
+
+
+fc-list
+fc-cache    xlsfo
+
+/usr/share/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
+
+
+sudo ln -s /usr/share/fontconfig/conf.avail/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf
+
+sudo texhash
+
+
+Build
+=====
+
+texi2pdf function/readme.tex
+
+pdflatex function/readme.tex
+
+pdfxmltex function/readme.tex
+pdftex function/readme.tex
+ xelatex function/readme.tex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LINKS
+=====
+
+ - <https://wiki.archlinux.org/title/TeX_Live>
+ - <https://www.cnblogs.com/1024th/p/11623258.html              >
