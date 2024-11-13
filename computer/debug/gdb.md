@@ -205,16 +205,7 @@ disassemble /m <function name>
 
 使用gdbserver进行远程调试，一般在嵌入式上进行调试，这里将嵌入式设备称之为目标主机，控制调试的设备(一般为我们的PC)成为监控主机。
 
-首先在目标主机中通过gdbserver启动程序。
-
-```shell
-# 启动待调试的程序。(这里192.168.3.20为目标主机的IP地址，/usr/sbin/helloworld -r start是调试程序的路径与启动参数。)
-
-gdbserver 192.168.3.20:2000 /usr/sbin/helloworld -r start
-```
-
-
-然后在监控主机的启动gdb并设置远程目标。
+首先在目标主机中通过gdbserver启动程序。然后在监控主机的启动gdb并设置远程目标。
 
 ```shell
 aarch64-linux-gnu-gdb helloworld
@@ -223,7 +214,7 @@ aarch64-linux-gnu-gdb helloworld
 ```gdb
 # 设置运行程序的远程目标主机。(192.168.3.21是目标主机的IP地址)，开启远程调试后已经启动程序，无需再次启动。
 
-target remote 192.168.3.21：2000
+                                                    target remote 192.168.3.21：2000
 ```
 
 
@@ -233,6 +224,10 @@ size <file path> 打印程序静态大小
 
 
 **内存相关**
+
+```gdb
+info proc mappings
+```
 
 ```gdb
 x $sp
@@ -248,6 +243,42 @@ x /bx $sp
 ```
 
 
+
+### Breakpoints
+
+```shell
+#
+break function_cname
+
+#
+break line
+
+#
+break func if a == 10
+
+
+# 打印断点
+print $bpnum
+```
+
+### Watchpoints
+
+```shell
+watch varname
+
+
+info watchpoints
+```
+
+
+### Catchpoints
+
+```shell
+throw
+rethrow
+catch
+
+```
 
 
 
