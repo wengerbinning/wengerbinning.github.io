@@ -1,21 +1,22 @@
-location /debug {
-    return 200 "
+default_type  text/plain;
+return 200 "
 ===============================================================================
-NGINX DEFAULT VARIABLE INFORMATION	\n
+NGINX DEFAULT VARIABLE INFORMATION
+
 Sevrer Information >
     nginx_version:$nginx_version
     server_name:$server_name
     server_protocol:$server_protocol
     server_addr:$server_addr
     server_port:$server_port
-\n
+
 Proxy Information >
     proxy_host:$proxy_host
     proxy_port:$proxy_port
     proxy_add_x_forwarded_for:$proxy_add_x_forwarded_for
     realip_remote_addr:$realip_remote_addr
     realip_remote_port:$realip_remote_port
-\n
+
 Request Information >
     scheme:$scheme
     uri:$uri
@@ -49,8 +50,6 @@ Request Information >
     cookie_name:$cookie_name
 
     ssl_cipher:$ssl_cipher
-\n
 
 ===============================================================================
-    ";
-}
+";
