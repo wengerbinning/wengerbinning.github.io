@@ -283,10 +283,15 @@ pdflatex function/readme.tex
 
 pdfxmltex function/readme.tex
 pdftex function/readme.tex
- xelatex function/readme.tex
+
+xelatex function/readme.tex
 
 
 
+
+
+
+xelatex
 
 
 
