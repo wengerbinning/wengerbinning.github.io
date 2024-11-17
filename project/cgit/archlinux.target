@@ -1,0 +1,42 @@
+
+cgit /etc/
+cgit /etc/webapps/
+cgit /etc/webapps/cgit/
+cgit /etc/webapps/cgit/apache.example.conf
+cgit /usr/
+cgit /usr/lib/
+cgit /usr/lib/cgit/
+cgit /usr/lib/cgit/cgit.cgi
+cgit /usr/lib/cgit/filters/
+cgit /usr/lib/cgit/filters/about-formatting.sh
+cgit /usr/lib/cgit/filters/commit-links.sh
+cgit /usr/lib/cgit/filters/email-gravatar.lua
+cgit /usr/lib/cgit/filters/email-gravatar.py
+cgit /usr/lib/cgit/filters/email-libravatar.lua
+cgit /usr/lib/cgit/filters/file-authentication.lua
+cgit /usr/lib/cgit/filters/gentoo-ldap-authentication.lua
+cgit /usr/lib/cgit/filters/html-converters/
+cgit /usr/lib/cgit/filters/html-converters/man2html
+cgit /usr/lib/cgit/filters/html-converters/md2html
+cgit /usr/lib/cgit/filters/html-converters/rst2html
+cgit /usr/lib/cgit/filters/html-converters/txt2html
+cgit /usr/lib/cgit/filters/owner-example.lua
+cgit /usr/lib/cgit/filters/simple-authentication.lua
+cgit /usr/lib/cgit/filters/syntax-highlighting.py
+cgit /usr/lib/cgit/filters/syntax-highlighting.sh
+cgit /usr/lib/tmpfiles.d/
+cgit /usr/lib/tmpfiles.d/cgit.conf
+cgit /usr/share/
+cgit /usr/share/man/
+cgit /usr/share/man/man5/
+cgit /usr/share/man/man5/cgitrc.5.gz
+cgit /usr/share/webapps/
+cgit /usr/share/webapps/cgit/
+cgit /usr/share/webapps/cgit/cgit.cgi
+cgit /usr/share/webapps/cgit/cgit.css
+cgit /usr/share/webapps/cgit/cgit.js
+cgit /usr/share/webapps/cgit/cgit.png
+cgit /usr/share/webapps/cgit/favicon.ico
+cgit /usr/share/webapps/cgit/robots.txt
+
+

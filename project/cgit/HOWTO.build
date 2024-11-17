@@ -1,0 +1,14 @@
+
+git clone https://git.zx2c4.com/cgit
+
+cd cgit 
+
+git clone https://github.com/git/git.git
+
+git submodule
+
+cd git && git check c522f061d551c9bb8684a7c3859b2ece4499b56b
+
+make
+
+make install
