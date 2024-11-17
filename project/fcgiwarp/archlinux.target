@@ -1,0 +1,38 @@
+fcgiwrap /usr/
+fcgiwrap /usr/bin/
+fcgiwrap /usr/bin/fcgiwrap
+fcgiwrap /usr/lib/
+fcgiwrap /usr/lib/systemd/
+fcgiwrap /usr/lib/systemd/system/
+fcgiwrap /usr/lib/systemd/system/fcgiwrap.service
+fcgiwrap /usr/lib/systemd/system/fcgiwrap.socket
+fcgiwrap /usr/share/
+fcgiwrap /usr/share/licenses/
+fcgiwrap /usr/share/licenses/fcgiwrap/
+fcgiwrap /usr/share/licenses/fcgiwrap/LICENSE
+fcgiwrap /usr/share/man/
+fcgiwrap /usr/share/man/man8/
+fcgiwrap /usr/share/man/man8/fcgiwrap.8.gz
+
+[wenger@WB-HW-MATEBOOK-D ~]$ pacman -Qi fcgiwrap
+Name            : fcgiwrap
+Version         : 1.1.0-9
+Description     : A simple server for running CGI applications over FastCGI.
+Architecture    : x86_64
+URL             : https://www.nginx.com/resources/wiki/start/topics/examples/fcgiwrap/
+Licenses        : MIT
+Groups          : None
+Provides        : None
+Depends On      : fcgi  systemd
+Optional Deps   : None
+Required By     : None
+Optional For    : None
+Conflicts With  : None
+Replaces        : None
+Installed Size  : 25.27 KiB
+Packager        : T.J. Townsend <blakkheim@archlinux.org>
+Build Date      : Fri 12 Jul 2024 10:11:24 PM CST
+Install Date    : Mon 26 Aug 2024 11:17:53 PM CST
+Install Reason  : Explicitly installed
+Install Script  : No
+Validated By    : Signature
