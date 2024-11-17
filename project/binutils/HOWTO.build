@@ -30,8 +30,8 @@ make install DESTDIR=${PWD}/dest
 #!/usr/bin/env bash
 
 BUILD_DIR="build"
-SOURCE_DIR=$(pwd)
-DEST_DIR="${BUILD_DIR}/dest"
+SOURCE_DIR=${PWD}
+DEST_DIR="${PWD}/dest"
 
 # # TARGET=x86-unknown-linux
 # ARCH="x86"
