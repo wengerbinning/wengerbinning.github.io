@@ -1,0 +1,85 @@
+
+
+获取源码
+=======
+
+* <https://sourceware.org/pub/binutils/releases/>
+* <https://ftp.gnu.org/gnu/binutils/>
+* <https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git>
+
+
+```shell
+git clone https://sourceware.org/git/binutils-gdb.git
+```
+
+
+项目编译
+======
+
+```shell
+./configure
+make
+make install DESTDIR=${PWD}/dest
+```
+
+
+编译脚本
+=======
+
+```shell
+#!/usr/bin/env bash
+
+BUILD_DIR="build"
+SOURCE_DIR=$(pwd)
+DEST_DIR="${BUILD_DIR}/dest"
+
+# # TARGET=x86-unknown-linux
+# ARCH="x86"
+# PROJECT="unknown"
+# OS="linux"
+# LABEL=""
+
+# # TARGET="x86_64-unknown-linux"
+# ARCH="x86_64"
+# PROJECT="unknown"
+# OS="linux"
+# LABEL=""
+
+# # TARGET="arm-unknown-linux"
+# ARCH="arm"
+# PROJECT="unknown"
+# OS="linux"
+# LABEL=""
+
+# # TARGET="aarch64-unknown-linux"
+# ARCH="aarch64"
+# PROJECT="unknown"
+# OS="linux"
+# LABEL=""
+
+# # TARGET="mips-unknown-linux"
+# ARCH="mips"
+# PROJECT="unknown"
+# OS="linux"
+# LABEL=""
+
+TARGET="${ARCH:-x86}-${PROJECT:-unknown}-${OS:-linux}-${LABEL:-gnu}"
+
+#
+test -d $BUILD_DIR && rm -rf $BUILD_DIR
+mkdir -p $BUILD_DIR
+cd $BUILD_DIR && {
+	#
+	# ${SOURCE_DIR}/configure --prefix=/
+	${SOURCE_DIR}/configure --prefix=/ --target=${TARGET}
+
+	#
+	make -j4
+
+	#
+	make install DESTDIR=${DEST_DIR}
+
+	#
+	cd - >/dev/null
+}
+```

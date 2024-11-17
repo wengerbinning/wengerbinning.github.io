@@ -1,0 +1,14 @@
+The GNU Binutils are a collection of binary tools. The main ones are:
+
+ld - the GNU linker
+as - the GNU assembler.
+gold - a new, faster, ELF only linker
+
+
+
+LINKS
+=====
+
+* Website - <https://www.gnu.org/software/binutils/>
+* Bugs - <bug-binutils@gnu.org>
+* Issues - <binutils@sourceware.org> 
