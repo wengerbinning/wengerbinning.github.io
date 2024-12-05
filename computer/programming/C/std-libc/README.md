@@ -1,7 +1,20 @@
 标准C库
 
 
+* regex.h
+* signal.h
+* unistd.h
+* stdlib.h
+* stdbool.h
 
 
 
-* [符号表](symbol.md)
+* glob.h
+* stdio.h
+
+
+
+
+## system
+
+* sys/un.h
