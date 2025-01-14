@@ -3,6 +3,106 @@
 ---
 
 
+1999年,工作在2.4GHz, 基于HR-DSSS(高速直接序列), 物理层最大速率是11Mpbs.
+
+2.4GHZ的共划分了14个频道, 每个频道5MHz,
+
+802.11b
+
+
+
+
+
+LLC(Logic Link Control)
+    MSDU(MAC Service Data Uint): maxsize 2304
+MAC(Media Access Control)
+    MPDU(MAC Protocol Data Unit)
+PLCP(Physical Layer Convergence Procedure)
+    PSDU(PLCP Service Data Unit)
+PMD(Physical Medium Dependent)
+    PPDU(PLCP Protocol Data Unit)
+
+
+
+链路层
+LLC
+MAC
+
+
+物理层
+
+PLCP(Physical Layer Convergence Procedure)
+------------------------------------------
+
+* 同步信号->Sync
+* 同步信号->SFD(Start Frame Delimiter)
+* Header
+* Signal
+* Service
+* Length
+* CRC
+*
+
+PMD(Physical Mediunm Dependent)
+
+
+
+
+
+
+CCA(Clear Channel Assessment, 频道净空评估): 指示MAC是否检测到信号
+
+
+
+DSSS(Direct Sequence Spectrum, 直接序列传输)
+-------------------------------------------
+一种展频技术
+
+
+
+
+
+
+
+CS/CCA
+------
+
+
+
+
+PBCC(Packet Binary Convolutional Code)
+--------------------------------------
+
+Channel agility
+----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Management Frames
 
