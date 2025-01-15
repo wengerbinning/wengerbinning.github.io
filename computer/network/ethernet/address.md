@@ -10,7 +10,7 @@ MAC地址
 * 单播地址
 
 ```
-xxxx xxx0 xxxx xxxx xxxx xxxx
+Xxxx xxxX xxxx xxxx xxxx xxxx
 xxxx xxxx xxxx xxxx xxxx xxxx
 ```
 
