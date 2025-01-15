@@ -1,0 +1,11 @@
+* 客户端向服务器的1723(TCP)端口发起连接.
+*
+
+
+
+
+
+* > Start Control Connection Request
+* < Start Control Connection Reply
+* > Outgoing Call Request
+* < Outgoing Call Reply
