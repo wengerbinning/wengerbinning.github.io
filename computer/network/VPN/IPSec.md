@@ -1,3 +1,87 @@
+ISAKMP(UDP/500, UDP/4500)
+ESP(UDP/4500)
+
+ISAKMP PROTO:
+* 08 - Initiator SPI
+* 08 - Responder SPI
+* 01 - Next Playload
+* 01 - Version
+* 01 - Exchange Type
+* 01 - Flags
+* 04 - Message ID
+* 04 - Length: Total Length
+* xx - <PAYLOAD>
+
+<Exchange Type>
+* 02 - Identity Protection (Main Mode)
+* 05 - Informational
+* 32 - Quick Mode
+
+<Flags>
+* 3 - Encryption
+* 2 - Commit
+* 1 - Authentication
+
+<Playload>
+* 01 - Next Playload
+* 01 - Reserved
+* 02 - Payload Length: include head
+* xx - <PAYLOAD DATA>
+
+<PlayLoad Type>
+* 000 - None
+* 001 - Security Association
+* 002 - Proposal
+* 003 - Transform
+* 004 - Key Exchange
+* 005 - Identification
+* 006 - Certificate
+* 007 - Certificate Request
+* 008 - Hash
+* 009 - Signature
+* 010 - Nonce
+* 013 - Vendor ID
+* 015 ~ 019: Reserved
+* 020 - NAT-D RFC 3947
+* 021 - NAT-OA
+* 022 ~ 127: Reserved
+* 128 - SK
+* 129 ~ 255: Reserved
+
+
+workflow
+
+
+> ISAKMP:Identity Protection(Main Mode)[Security Association/Vendor ID]
+< ISAKMP:Identity Protection(Main Mode)[Security Association/Vendor ID]
+> ISAKMP:Identity Protection(Main Mode)[Security Association/Vendor ID]
+< ISAKMP:Identity Protection(Main Mode)[Key Exchange/Nonce/NAT-D RFC3947]
+> ISAKMP:Identity Protection(Main Mode)[Key Exchange/Nonce/NAT-D RFC3947]
+> ISAKMP:Identity Protection(Main Mode)[Security Association/Vendor ID]
+< ISAKMP:Identity Protection(Main Mode)[Security Association/Vendor ID]
+> ISAKMP:Identity Protection(Main Mode)[Key Exchange/Nonce/NAT-D RFC3947]
+< ISAKMP:Identity Protection(Main Mode)[Key Exchange/Nonce/NAT-D RFC3947]
+
+> ISAKMP:Identity Protection(Main Mode)[encrypt, Identification]
+< ISAKMP:Identity Protection(Main Mode)[encrypt, Identification]
+
+> ISAKMP:Quick Mode[encrypt, Hash]
+< ISAKMP:Quick Mode[encrypt, Hash]
+> ISAKMP:Quick Mode[encrypt, Hash]
+
+> ISAKMP:Identity Protection(Main Mode)[Key Exchange/Nonce/NAT-D RFC3947]
+
+> ESP:DATA
+
+
+
+
+
+Phase 1: ISAKMP SA
+------------------
+>
+
+Phase 2:  IPSec SA
 
 
 安全关联(Security Association)
@@ -137,4 +221,4 @@ DH算法
 
 ## LINKS
 
-* <https://support.huawei.com/enterprise/zh/doc/EDOC1100033740/c11c5416>        
+* <https://support.huawei.com/enterprise/zh/doc/EDOC1100033740/c11c5416>
