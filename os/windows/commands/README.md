@@ -1,6 +1,19 @@
 
 
 
+* ping
+* ipcofig
+* route
+* arp
+* traceroute
+* nslookup
+* nbstat
+* netstat
+* telent
+* net
+* netsh
+
+
 
 ```cmd
 
