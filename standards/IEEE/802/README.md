@@ -7,3 +7,14 @@ LAN/MAN标准委员会(IEEE802)使用开放和认可的流程， 为本地局域
 * [802.1] 高层局域网协议工作组(Higher Layer LAN Protocols Working Group)
 * [802.3] 以太网工作组(Ethernet Working Group)
 * [802.11] 无线局域网工作组(Wireless LAN Working Group)
+
+
+### IEEE 802.1 - Bridge & Managerment
+### IEEE 802.3 - Ethernet
+### IEEE 802.11 - Wireless LANs
+### IEEE 802.15 - Wireless Specialty Network
+### IEEE 802.16 - Broadband Wireless MANs
+### IEEE 802.19 - Wireless Coexistence
+### IEEE 802.21 - Media Independent Handover Services
+### IEEE 802.22 - Wireless Regional Area Networks
+
