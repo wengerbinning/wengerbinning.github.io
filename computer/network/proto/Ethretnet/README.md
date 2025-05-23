@@ -1,4 +1,4 @@
-以太网(Ethernet)是由美国Xerox(施乐)的Palo Alto研究中心于1975年研制成的一种基带总线局域网，数据 
+以太网(Ethernet)是由美国Xerox(施乐)的Palo Alto研究中心于1975年研制成的一种基带总线局域网，数据
 传输速率为2.94Mbps。之后Digital、Intel、Xerox于1981年合作提出了以太网规约。次年又修改了第二版，
 即DIX Ethernet V2， 这是世界上第一个局域网产品的规约。
 
@@ -13,21 +13,26 @@
 
 
 
-Ethernet Frame header
+Ethernet Frame (Layer 1)
+------------------------
 
-* 7B - Preamble
-* 1B - SFD, start frame delimiter
+8 + 12 ~
 
-Ethernet Frame size is 64 ~ 1522B
+* 07B - Preamble
+* 01B - SFD, start frame delimiter
+* xxB - Ethernet Frame(Layer 2)
+* 12B - IPG(Interpacket gap)
+
+Ethernet Frame (layer 2)
+------------------------
+
+64B ~ 1522B
 
 * 06B - DST MAC
 * 06B - SRC MAC
-* 04B - 802.1Q TAG
-* 02B -  ETherType size 46 — 1500
-* XXB - Playload
+* 02B - Ethernet Type
+* xxB - Playload
 * 04B - FCS, Frame Check Sqeuence， 32 CRC
 
-Ethernet Frame Footer
 
-* 12B - IPG， Interpacket GAP
 

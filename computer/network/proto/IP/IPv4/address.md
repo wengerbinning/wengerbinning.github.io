@@ -1,4 +1,14 @@
 
+
+#### NAT
+
+Network Address Translation
+
+#### NAPT
+
+Network Address and Port Translation
+
+
 ## IPV4
 
 32位表示，总共约43亿个地址。

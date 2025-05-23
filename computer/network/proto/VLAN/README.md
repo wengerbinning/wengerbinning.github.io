@@ -14,7 +14,7 @@ VLAN是属于数据链路层的技术， 因为在应用中一般用一个VLAN�
 
 VID，VLAN ID
 
-default VLAN的VID通常为1， 
+default VLAN的VID通常为1，
 
 
 
@@ -76,5 +76,48 @@ VLAN优先级
 
 
 
+
+
+
+
+
+
+802.1Q Frame(ethtype: 0x8100)
+-----------------------------
+
+* 02B - TPID(Tag protocol identifier)
+* 02B - 8021Q TCI(Tag control information)
+
+
+802.1Q TCI:
+
+* 03b - PCP(Priority code point)
+* 01b - DEI(Drop eligible indicator)
+* 12b - VID(VLAN identifier)
+
+
+
+
+
+
+802.1ad Frame(ethtype: 0x88A8 )
+-------------------------------
+
+Service Tag + Customer Tag
+
+* 02B - STPID
+* 02B - 8021ad STCI
+* 02B - CTPID
+* 02B - 8021Q CTCI
+
+
+
+8021.Q GVRP(GARP VLAN Registration Protocol) IEEE 802.1ak-2007
+--------------------------------------------------------------
+
+
+
+802.1Q MVRP(Multiple VLAN Registration Protocol)
+------------------------------------------------
 
 
