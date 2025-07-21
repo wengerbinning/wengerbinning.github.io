@@ -1,0 +1,5 @@
+curl -X POST http://192.168.129.147/ssh/test.php \
+    -d 'name=7404dd141317e186f5a226acf5b0c9b2'
+
+
+curl -X POST http://192.168.129.147/ssh/test.php -d 'name=7404dd141317e186f5a226acf5b0c9b2'

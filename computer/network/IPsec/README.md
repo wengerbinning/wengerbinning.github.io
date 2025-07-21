@@ -76,3 +76,6 @@ ESP(Encapsulating Security Payload, 封装安全负载)
 * RFC44303
 
 提供机密性、完整性、原始认证以及IP数据报的反重放保护。
+
+
+Dead Peer Detection
