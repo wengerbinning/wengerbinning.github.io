@@ -1,0 +1,55 @@
+wenger@WBZHENG-02 wengerbinning.github.io $ npx create-dumi
+Need to install the following packages:
+create-dumi@2.4.14
+Ok to proceed? (y)
+
+✔ Pick template type › Static Site
+✔ Pick NPM client › npm
+✔ Input project name … Wenger Binning Handbooks
+✔ Input project description … A static site based on dumi
+✔ Input project author (Name <email@example.com>) … Wenger Binning <wengerbinning@gmail.com>
+Write: .dumirc.ts
+Copy:  .editorconfig
+Write: .gitignore
+Copy:  .husky/commit-msg
+Copy:  .husky/pre-commit
+Copy:  .prettierignore
+Copy:  .prettierrc.js
+Copy:  docs/guide.md
+Write: docs/index.md
+Write: LICENSE
+Write: package.json
+Write: README.md
+Write: tsconfig.json
+npm warn ERESOLVE overriding peer dependency
+npm warn ERESOLVE overriding peer dependency
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm warn deprecated
+npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm warn deprecated @esbuild-kit/cjs-loader@2.4.4: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm warn deprecated @floating-ui/react-dom-interactions@0.3.1: Package renamed to @floating-ui/react
+npm warn deprecated @stylelint/postcss-css-in-js@0.38.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+
+> Wenger Binning Handbooks@0.0.1 prepare
+> husky install && dumi setup
+
+husky - Git hooks installed
+info  - dumi v2.4.21
+info  - generate files
+
+added 1587 packages in 9m
+
+431 packages are looking for funding
+  run `npm fund` for details

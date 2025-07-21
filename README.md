@@ -1,1 +1,23 @@
-该仓库将作为一个博客文档的记录仓库，记录个人的学习过程。
+# Wenger Binning Handbooks
+
+A static site base on [dumi](https://d.umijs.org).
+
+## Development
+
+```bash
+# install dependencies
+$ npm install
+
+# start dev server
+$ npm start
+
+# build docs
+$ npm run build
+
+# Locally preview the production build
+$ npm run preview
+```
+
+## LICENSE
+
+MIT
