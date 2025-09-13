@@ -6,7 +6,8 @@ ICMPv6
 * RFC 3775 - Mobility Support in IPv6
 * RFC 4191 - Default Router Preferences and More-Specific Routes
 * RFC 4389 - Neighbor Discovery Proxies (ND Proxy)
-
+* RFC 3633
+* RFC 8415
 
 * 路由发现
 * 地址检测
@@ -58,8 +59,6 @@ SLAAC
 
 连接到网络的设备基于RA信息自动分配地址的方案。基于EUI64算法。
 
-
-
 DHCPv6
 -------
 
@@ -77,9 +76,15 @@ DHCPv6 无状态
 DHCPv6服务器分配除地址之外的网络参数。
 
 
-DHCP PD
---------
-RFC 3633 -> RFC 8415
+DHCPv6 PD(Prefix Delegation, 前缀代理)
+-------------------------------------
+
+一种前缀分配机制，PD Server&Client
+
+*
+
+
+
 
 
 * DAD(Duplicate Address Detection, 地址重复检查)

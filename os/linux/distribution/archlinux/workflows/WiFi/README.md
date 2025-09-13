@@ -2,7 +2,7 @@ wconfig wlan1 mode monitor
 
 
 sudo ip link set dev wlan1 down
-c
+
 iwconfig wlan1 mode monitor
 
 
