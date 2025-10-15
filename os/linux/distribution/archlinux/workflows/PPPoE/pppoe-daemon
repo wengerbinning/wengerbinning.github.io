@@ -1,0 +1,27 @@
+#!/bin/sh
+
+help() {
+cat <<EOF
+-s, --shrc <SHRC>   Setting shrc config.
+-h, --help          Display this help.
+EOF
+}
+
+# usage: main <INTERFACE> <NAME> <ADDRESS> <POOL>
+main() { exec /usr/bin/pppoe-server -I $1 -X /var/run/pppoe-server-$1.pid -S $2 -L $3 -R $4; }
+
+#
+test -n "$1" || { help; exit 1; }
+while [ -n "$1" ]; do o=$1; shift
+	case ${o:--h} in
+	-n*|--name) NAME=$1; shift ;;
+	-i*|--interface) INTERFACE=$1; shift ;;
+	-a*|--address) ADDRESS=$1; shift ;;
+	-p*|--pool) POOL=$1; shift ;;
+	-s*|--shrc) test -f $1 && source $1; shift ;;
+	-h*|--help) help; exit 1 ;;
+	*) echo "Unknown paramater $o!"; help; exit 1
+	esac
+done
+
+main ${INTERFACE:-lo} ${NAME:-ISP} ${ADDRESS:-127.1.1.1} ${POOL}
