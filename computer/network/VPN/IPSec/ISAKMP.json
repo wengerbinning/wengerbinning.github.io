@@ -32,14 +32,14 @@
                 "aggressive": {
                     "1": "Initiator → Responder",
                     "2": "Responder → Initiator",
-                    "3": "Initiator → Responder : Authentication",
+                    "3": "Initiator → Responder : Authentication"
                 }
             },
             "phase 2": {
                 "name": "IPsec SA",
                 "mode": ["quick"],
                 "quick": {
-                    "1": "Initiator → Responder : 提出 IPsec SA 参数（ESP/AH算法）",
+                    "1": "Initiator → Responder : 提出 IPsec SA 参数(ESP/AH算法)",
                     "2": "同意并返回 SPI、密钥材料",
                     "3": "确认"
                 }
