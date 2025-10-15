@@ -1,0 +1,59 @@
+{
+    "name": "ISAKMP(Internet Security Association and Key Management Protocol)",
+    "type": "framework",
+    "implement": ["IKEv1", "IKEv2"],
+    "stardand": ["RFC 2408"],
+    "proto": {
+        "00/32": "Initiator Cookie",
+        "31/32": "Responder Cookie",
+        "2": "Next Payload",
+        "3": "MjVer",
+        "4": "MnVer",
+        "5": "Exchange Type",
+        "6": "Flags",
+        "7": "Message ID",
+        "8": "Length"
+    },
+    "IKEv1": {
+        "name": "Internet Key Exchange version 1",
+        "stardand": ["RFC 2409"],
+        "workflow": {
+            "phase 1": {
+                "name": "IKE SA",
+                "mode": ["main", "aggressive"],
+                "main": {
+                    "1": "Initiator → Responder : Proposal, DH 公钥",
+                    "2": "Responder → Initiator : 选择算法, DH 公钥",
+                    "3": "双方计算共享密钥",
+                    "4": "Initiator → Responder : 身份信息 (加密)",
+                    "5": "Responder → Initiator : 身份信息 (加密)",
+                    "6": "双方确认建立 IKE SA"
+                },
+                "aggressive": {
+                    "1": "Initiator → Responder",
+                    "2": "Responder → Initiator",
+                    "3": "Initiator → Responder : Authentication",
+                }
+            },
+            "phase 2": {
+                "name": "IPsec SA",
+                "mode": ["quick"],
+                "quick": {
+                    "1": "Initiator → Responder : 提出 IPsec SA 参数（ESP/AH算法）",
+                    "2": "同意并返回 SPI、密钥材料",
+                    "3": "确认"
+                }
+            }
+        },
+        "auth": ["PSK", "Digital Signature", "Public Key Encryption", "Xauth", "Mode Config"]
+    },
+    "IKEv2": {
+        "stardand":["RFC 7296"],
+        "workflow": [
+            {
+
+            }
+        ]
+
+    }
+}

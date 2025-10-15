@@ -1,5 +1,17 @@
-ISAKMP(UDP/500, UDP/4500)
-ESP(UDP/4500)
+ISAKMP(UDP/500) & ESP(UDP/4500)
+
+
+
+
+
+* RFC 2408
+
+
+* Phase 1 - IKE SA
+* Xauth
+* Phase 2 - IPsec SA
+
+
 
 ISAKMP PROTO:
 * 08 - Initiator SPI
@@ -218,6 +230,19 @@ DH算法
 
 * 隧道模式
 * 传输模式
+
+
+## Libreswan
+
+* pluto (IKE daemon)/starter, whack
+* libreswan library(policy, crypto, auth)
+* Kernel IPsec stack(XFRM/NETKEY)
+
+## Strongwan
+
+* charon (IKE daemon)/starter / swanctl / ipsec tools
+* Libstrongswan(crypto, x509, plugins, EAP)
+* Kernel IPsec stack(XFRM, netkey)
 
 ## LINKS
 
