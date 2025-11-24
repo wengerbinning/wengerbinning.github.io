@@ -17,7 +17,6 @@ EUI(扩展唯一标识符)
 地址列表
 
 * `FF-FF-FF-FF-FF-FF` - 广播地址是组播地址中的特殊地址。
-* `01-00-5E` - IPv4组播的MAC
-
+* `01-00-5E-XX-XX-XX` - IPv4组播的MAC
 
 ## LINKS
