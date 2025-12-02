@@ -1,3 +1,64 @@
+IP Transform Framework (ip xfrm)
+
+* IP层进入框架,
+
+
+
+IPSec
+SA(Security Assiciation)
+SPD(Security Policy Database)
+SAD(SA Database)
+
+
+895 582 323
+
+Outbound
+
+* 策略检查(SPD Lookup): 对协议栈数据技进程策略检查 ip_local_out -> xfrm_lookup
+struct dst_entry * xfrm_lookup (struct net *net, struct dst_entry *dst_orig, const struct flowi *fl, const struct sock *sk, int flags)
+
+
+Inbound
+
+net/xfrm/xfrm_policy.c      # 策略
+net/xfrm/xfrm_state.c       # 关联
+
+
+
+net/ipv4/ah4.c
+net/ipv6/ah6.c
+
+net/ipv4/esp4.c
+net/ipv6/esp6.c
+
+
+
+
+
+
+
+XFRM
+xfrm4_rcv: int xfrm4_rcv (struct sk_buff *skb)
+xfrm_input: int xfrm_input (struct sk_buff *skb, int nexthdr, __be32 spi, int encap_type)
+* 头部解析(SPI)
+* 查找关联(SA)
+* 递送数据
+*
+
+
+
+---
+
+
+AH
+input: int ah_input (struct xfrm_state *x, struct sk_buff *skb)
+*
+
+ESP(Encapsulating Security Payload)
+input: int esp_input (struct xfrm_state *x, struct sk_buff *skb)
+* 解密数据
+* 还原信息(协议头部)
+* 重新处理(IP层, xfrm_input_resume)
 
 ## 基础原理
 
@@ -260,9 +321,9 @@ xfrm4_transport_finish -> NF_HOOK(NFPROTO_IPV4,NF_INET_PRE_ROUTING,xfrm4_rcv_enc
 
 
 xfrmi_rcv_cb
-esp_input -> 
+esp_input ->
 
-* 
+*
 
 
 
@@ -300,7 +361,7 @@ __xfrm4_output -> afinfo->output_finish:xfrm4_output_finish
 
 xfrm4_output_finish -> xfrm_output
 
-xfrm_output -> xfrm_output_resume 
+xfrm_output -> xfrm_output_resume
 
 xfrm_output_resume -> xfrm_output_one
 xfrm_output_resume -> dst_output:esp_output

@@ -69,7 +69,7 @@ struct nf_conntrack_tuple_hash {
 };
 ```
 
-#### struct nf_conntrack_tuple 
+#### struct nf_conntrack_tuple
 
 ```c
 struct nf_conntrack_tuple {
@@ -246,3 +246,23 @@ __ip_local_out
 
 __netif_receive_skb_one_core -> __netif_receive_skb_core
 __netif_receive_skb_one_core -> pt_prev->func:ipv6_rcv,ip_rcv
+
+
+
+Netfilter - Linux 内核中的数据包处理框架. 实现对数据拦截/修改/丢弃/转发
+
+
+NF_INET_PRE_ROUTING
+NF_INET_LOCAL_IN
+NF_INET_FORWARD
+NF_INET_LOCAL_OUT
+NF_INET_POST_ROUTING
+
+
+NF_ACCEPT
+NF_DROP
+NF_STOLEN
+NF_QUEUE
+NF_REPEAT
+
+

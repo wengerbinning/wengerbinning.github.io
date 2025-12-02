@@ -139,7 +139,7 @@ struct crypto_alg {
 	int (*cra_init)(struct crypto_tfm *tfm);
 	void (*cra_exit)(struct crypto_tfm *tfm);
 	void (*cra_destroy)(struct crypto_alg *alg);
-	
+
 	struct module *cra_module;
 
 #ifdef CONFIG_CRYPTO_STATS
@@ -164,3 +164,67 @@ struct crypto_alg *alg;
 //
 printk("cra name %s form %s ", alg->cra_name, alg->cra_driver_name);
 ```
+
+
+
+* AHEAD:
+* HMAC:
+* RNG:
+* shash
+* ahash
+* skcipher
+* kpp
+* scomp
+
+
+
+
+
+AEAD
+----
+
+* 输入参数:
+* 输出参数:
+
+
+
+HMAC
+----
+
+* 输入参数:
+* 输出参数:
+
+
+RNG
+
+
+
+
+
+
+CBC
+HMAC
+
+
+
+
+* single blobk cipher
+* template
+* prioritory
+
+
+
+* skcipher: symmetric key ciphers
+* cipher: single block ciphers
+* shash: synchronous message digest
+* ahash: asynchronous message digest
+* aead: AEAD cipher type
+* compression: compression type transformations
+* rng: random number generator
+* kpp: Key-agreement Protocol Primitive (KPP) cipher such as an ECDH or DH implementation
+
+* 处理数据大小
+* 输入密钥长度
+* 输出摘要大小
+* 种子数据大小
+* 初始向量大小

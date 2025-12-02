@@ -65,7 +65,12 @@ Linux kernel
 
 
 
+Software IRQ
 
+
+NET_RX_SOFTIRQ
+void net_rx_action(struct softirq_action *h);
+* 获取统计数据,时间限制
 
 
 
