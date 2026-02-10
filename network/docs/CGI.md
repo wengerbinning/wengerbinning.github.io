@@ -1,0 +1,3 @@
+通用网关接口（CGI， Common Gateway Interface）是一种互联网技术，实现了浏览器向Web服务器中的其他程序进行数据请求。该接口描述了服务器中程序与请
+求数据之间转化的标准。perl是广泛用于实现CGI的编程语言。另外CGI是不依赖编程语言的接口。
+ddwdwedsddwsdwdwdwdwwdwddw

@@ -1,0 +1,74 @@
+npm is the world's largest software registry.
+
+Open source developers from every continent use npm to share and borrow packages,
+and many organizations use npm to manage private development as well.
+
+
+npm consists of three distinct components:
+
+* the website
+* the Command Line Interface (CLI)
+* the registry
+
+
+
+```shell
+npm config list
+
+npm config ls -l
+```
+
+
+```shell
+# 当前目录下的包
+npm list
+
+
+# /usr/lib/node_modules/
+npm list --global
+```
+
+
+* npmrc
+
+
+
+
+
+
+
+
+package.json
+============
+Specifics of npm's package.json handling
+
+- name
+- version
+- description
+- keywords
+- homepage
+- bugs
+- license
+- repository
+- script
+- config
+- dependencies
+- devDependencies
+- engines
+- os
+- cpu
+
+
+
+
+script
+---------
+The "scripts" property is a dictionary containing script commands that are run at various times in the lifecycle of your package.
+The key is the lifecycle event, and the value is the command to run at that point.
+
+
+
+
+
+
+* <https://docs.npmjs.com/>

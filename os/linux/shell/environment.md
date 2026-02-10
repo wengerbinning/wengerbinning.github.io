@@ -1,0 +1,8 @@
+
+
+
+
+* SHELL
+* PATH
+* PWD
+* USER

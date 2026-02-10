@@ -1,0 +1,1 @@
+有源光网络(active optical network, AON)是一种光纤电信技术。

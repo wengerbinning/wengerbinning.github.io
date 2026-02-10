@@ -1,0 +1,34 @@
+
+* Next Payload
+* Reserved
+* Payload Length
+*
+
+
+
+
+
+
+* encryption algorithm
+* hash algorithm
+* authentication method
+* information about a group over which to do Diffie-Hellman.
+
+
+
+
+
+IKE Phase 1 - ISAKMP SA(IKE SA)
+-------------------------------
+
+* Main Mode
+* Aggressive Mode
+
+
+
+
+
+IKE Phase 2 - IPsec SA
+----------------------
+
+* "Quick Mode" MUST ONLY be used in phase 2.

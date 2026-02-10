@@ -1,0 +1,8 @@
+程序的调试手段
+
+
+
+
+* gdb
+* strace
+* LD_PRELOAD替换库文件

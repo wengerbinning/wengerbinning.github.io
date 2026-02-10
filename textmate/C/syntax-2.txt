@@ -1,0 +1,75 @@
+
+anon_pattern_1
+--------------
+"name": "keyword.control.c"
+"match": "\\b(break|continue|do|else|for|goto|if|_Pragma|return|while)\\b",
+
+anon_pattern_2
+--------------
+"name": "keyword.other.typedef.c"
+"match": "typedef",
+
+anon_pattern_3
+--------------
+"name": "storage.modifier.c"
+"match": "\\b(const|extern|register|restrict|static|volatile|inline)\\b",
+
+anon_pattern_4
+--------------
+"name": "constant.other.variable.mac-classic.c"
+"match": "\\bk[A-Z]\\w*\\b",
+
+anon_pattern_5
+--------------
+"name": "variable.other.readwrite.global.mac-classic.c"
+"match": "\\bg[A-Z]\\w*\\b",
+
+anon_pattern_6
+--------------
+"name": "variable.other.readwrite.static.mac-classic.c"
+"match": "\\bs[A-Z]\\w*\\b",
+
+anon_pattern_7
+--------------
+"name": "constant.language.c"
+"match": "\\b(NULL|true|false|TRUE|FALSE)\\b",
+
+anon_pattern_8
+---------------
+"name": "support.type.sys-types.c"
+"match": "\\b(u_char|u_short|u_int|u_long|ushort|uint|u_quad_t|quad_t|qaddr_t|caddr_t|daddr_t|div_t|dev_t|fixpt_t|blkcnt_t|blksize_t|gid_t|in_addr_t|in_port_t|ino_t|key_t|mode_t|nlink_t|id_t|pid_t|off_t|segsz_t|swblk_t|uid_t|id_t|clock_t|size_t|ssize_t|time_t|useconds_t|suseconds_t)\\b",
+
+anon_pattern_9
+--------------
+"match": "\\b(pthread_attr_t|pthread_cond_t|pthread_condattr_t|pthread_mutex_t|pthread_mutexattr_t|pthread_once_t|pthread_rwlock_t|pthread_rwlockattr_t|pthread_t|pthread_key_t)\\b",
+"name": "support.type.pthread.c"
+
+anon_pattern_10
+---------------
+"name": "support.type.stdint.c"
+"match": "(?x) \\b\n(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t\n|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t\n|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t\n|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t\n|uintmax_t|uintmax_t)\n\\b",
+
+anon_pattern_11
+---------------
+"name": "support.constant.mac-classic.c"
+"match": "\\b(noErr|kNilOptions|kInvalidID|kVariableLengthArray)\\b",
+
+anon_pattern_12
+---------------
+"name": "support.type.mac-classic.c"
+"match": "(?x) \\b\n(AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam\n|ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr\n|Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber\n|ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64\n|SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32\n|UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr\n|UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)\n\\b",
+
+anon_pattern_13
+---------------
+"name": "support.type.posix-reserved.c"
+"match": "\\b([A-Za-z0-9_]+_t)\\b",
+
+anon_pattern_14
+---------------
+"name": "punctuation.terminator.statement.c"
+"match": ";",
+
+anon_pattern_15
+---------------
+"name": "punctuation.separator.delimiter.c"
+"match": ",",

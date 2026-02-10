@@ -1,0 +1,89 @@
+From beb4076311d89d3c11e31c5d1e35c48b3df9f78a Mon Sep 17 00:00:00 2001
+From: wbzheng <wbzheng@grandstream.cn>
+Date: Sun, 23 Jul 2023 17:32:22 +0800
+Subject: [PATCH] (build) Fxied build error.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- build error message.
+
+>  gcc -fvisibility=hidden  -fpic -I.  -I/usr/include/libnl3  -include rte_config.h -march=corei7 -I/usr/include/libnl3 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-dpdk.c
+>  ./pcap-dpdk.c:202:18: error: ‘struct rte_eth_rxmode’ has no member named ‘split_hdr_size’
+>    202 |                 .split_hdr_size = 0,
+>        |                  ^~~~~~~~~~~~~~
+>  ./pcap-dpdk.c:205:28: error: ‘ETH_MQ_TX_NONE’ undeclared here (not in a function); did you mean ‘RTE_ETH_MQ_TX_NONE’?
+>    205 |                 .mq_mode = ETH_MQ_TX_NONE,
+>        |                            ^~~~~~~~~~~~~~
+>        |                            RTE_ETH_MQ_TX_NONE
+>  ./pcap-dpdk.c: In function ‘check_link_status’:
+>  ./pcap-dpdk.c:502:38: error: ‘ETH_LINK_UP’ undeclared (first use in this function); did you mean ‘RTE_ETH_LINK_UP’?
+>    502 |         return plink->link_status == ETH_LINK_UP;
+>        |                                      ^~~~~~~~~~~
+>        |                                      RTE_ETH_LINK_UP
+>  ./pcap-dpdk.c:502:38: note: each undeclared identifier is reported only once for each function it appears in
+>  ./pcap-dpdk.c: In function ‘pcap_dpdk_activate’:
+>  ./pcap-dpdk.c:838:48: error: ‘DEV_TX_OFFLOAD_MBUF_FAST_FREE’ undeclared (first use in this function); did you mean ‘RTE_ETH_TX_OFFLOAD_MBUF_FAST_FREE’?
+>    838 |                 if (dev_info.tx_offload_capa & DEV_TX_OFFLOAD_MBUF_FAST_FREE)
+>        |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>        |                                                RTE_ETH_TX_OFFLOAD_MBUF_FAST_FREE
+>  In file included from ./pcap-dpdk.c:97:
+>  ./pcap-dpdk.c:975:62: error: ‘ETH_LINK_FULL_DUPLEX’ undeclared (first use in this function); did you mean ‘RTE_ETH_LINK_FULL_DUPLEX’?
+>    975 |                                         (link.link_duplex == ETH_LINK_FULL_DUPLEX) ?
+>        |                                                              ^~~~~~~~~~~~~~~~~~~~
+>  make: *** [Makefile:88: pcap-dpdk.o] Error 1
+---
+ pcap-dpdk.c | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
+
+diff --git a/pcap-dpdk.c b/pcap-dpdk.c
+index 025a6748..6113865b 100644
+--- a/pcap-dpdk.c
++++ b/pcap-dpdk.c
+@@ -198,11 +198,9 @@ struct pcap_dpdk{
+ };
+ 
+ static struct rte_eth_conf port_conf = {
+-	.rxmode = {
+-		.split_hdr_size = 0,
+-	},
++	.rxmode = { 0 },
+ 	.txmode = {
+-		.mq_mode = ETH_MQ_TX_NONE,
++		.mq_mode = RTE_ETH_MQ_TX_NONE,
+ 	},
+ };
+ 
+@@ -499,7 +497,7 @@ static int check_link_status(uint16_t portid, struct rte_eth_link *plink)
+ {
+ 	// wait up to 9 seconds to get link status
+ 	rte_eth_link_get(portid, plink);
+-	return plink->link_status == ETH_LINK_UP;
++	return plink->link_status == RTE_ETH_LINK_UP;
+ }
+ static void eth_addr_str(ETHER_ADDR_TYPE *addrp, char* mac_str, int len)
+ {
+@@ -835,9 +833,9 @@ static int pcap_dpdk_activate(pcap_t *p)
+ 		}
+ 		// config dev
+ 		rte_eth_dev_info_get(portid, &dev_info);
+-		if (dev_info.tx_offload_capa & DEV_TX_OFFLOAD_MBUF_FAST_FREE)
++		if (dev_info.tx_offload_capa & RTE_ETH_TX_OFFLOAD_MBUF_FAST_FREE)
+ 		{
+-			local_port_conf.txmode.offloads |=DEV_TX_OFFLOAD_MBUF_FAST_FREE;
++			local_port_conf.txmode.offloads |= RTE_ETH_TX_OFFLOAD_MBUF_FAST_FREE;
+ 		}
+ 		// only support 1 queue
+ 		ret = rte_eth_dev_configure(portid, 1, 1, &local_port_conf);
+@@ -972,7 +970,7 @@ static int pcap_dpdk_activate(pcap_t *p)
+ 		RTE_LOG(INFO, USER1,"Port %d device: %s, MAC:%s, PCI:%s\n", portid, p->opt.device, pd->mac_addr, pd->pci_addr);
+ 		RTE_LOG(INFO, USER1,"Port %d Link Up. Speed %u Mbps - %s\n",
+ 							portid, link.link_speed,
+-					(link.link_duplex == ETH_LINK_FULL_DUPLEX) ?
++					(link.link_duplex == RTE_ETH_LINK_FULL_DUPLEX) ?
+ 						("full-duplex") : ("half-duplex\n"));
+ 	}
+ 	return ret;
+-- 
+2.41.0
+
