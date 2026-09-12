@@ -1,2 +1,0 @@
-uClibc是一个面向嵌入式Linux系统的小型的C标准库，是为了支持uClinux而开发的。uClinux是一个不需要
-内存管理单元的Linux版本。比glibc小很多
